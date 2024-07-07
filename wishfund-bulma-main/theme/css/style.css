@@ -58,7 +58,7 @@ p {
 }
 
 .navbar-toggle .icon-bar {
-  background: #f89d35;
+  background: #735da5;
 }
 
 input[type=email], input[type=password], input[type=text], input[type=tel] {
@@ -71,7 +71,19 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
   box-shadow: none;
   border: 1px solid #f89d35;
 }
-
+.part1{
+  color: black
+  ;
+}
+.part2{
+  color: black;
+}
+.part3{
+  color: black;
+}
+.part4{
+  color: #fff;
+}
 .input {
   box-shadow: none;
   border-radius: 0;
@@ -86,7 +98,9 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
 .py-7 {
   padding: 7rem 0px;
 }
-
+.h2P{
+  color: #735da5;
+}
 .btn {
   display: inline-block;
   font-size: 14px;
@@ -1435,7 +1449,7 @@ ul.list-styled {
   margin: 10px 0;
 }
 .share-option a:hover {
-  background: #f89d35;
+  background:#735da5;
   color: #fff;
 }
 
