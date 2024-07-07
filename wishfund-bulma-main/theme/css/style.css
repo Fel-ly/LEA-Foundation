@@ -691,7 +691,7 @@ ul.list-styled {
   border-bottom: 1px solid rgba(0, 0, 0, 0.03);
 }
 .navbar-dropdown .navbar-item:hover {
-  background: #f89d35 !important;
+  background: #735da5 !important;
   color: #fff !important;
 }
 @media (max-width: 1023px) {
@@ -720,7 +720,7 @@ ul.list-styled {
   }
 }
 .bg-1 {
-  background: url("../images/bg/LEA-30.jpg") no-repeat 50% 50%;
+  background: url("../images/bg/team1\ -\ Copy.JPG") no-repeat 50% 50%;
   background-size: cover;
 }
 
@@ -730,9 +730,9 @@ ul.list-styled {
 }
 
 .slider {
-  background: url("../images/bg/LEA-30.jpg") no-repeat;
+  background: url("../images/bg/team1\ -\ Copy.JPG") no-repeat;
   background-size: cover;
-  background-position: 10% 30%;
+  background-position: 10% 40%;
   padding: 100px 0;
   position: relative;
 }
@@ -863,7 +863,7 @@ ul.list-styled {
 }
 .volunteer-form .btn:hover {
   color: #fff;
-  border-color: #f89d35;
+  border-color: #d3c5e5;
 }
 
 .clients-wrap a {
@@ -1212,10 +1212,10 @@ ul.list-styled {
 
 .volunteer-form .input {
   height: 50px;
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  border: 10px solid rgba(78, 40, 53, 0.06);
 }
 .volunteer-form .input:focus {
-  border-color: #f89d35;
+  border-color: #060112;
 }
 
 .event-item {
