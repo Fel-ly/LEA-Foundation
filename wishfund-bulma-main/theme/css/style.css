@@ -16,7 +16,8 @@ body {
   font-family: "Montserrat", sans-serif;
   -webkit-font-smoothing: antialiased;
   font-size: 16px;
-  color: #464646;
+  color: #fff;
+  background-color: #735da5;
 }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
@@ -53,7 +54,7 @@ h6, .h6 {
 }
 
 p {
-  color: #6c757d;
+  color: #fff;
 }
 
 .navbar-toggle .icon-bar {
@@ -260,7 +261,7 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
 }
 
 .text-color {
-  color: #f89d35;
+  color: #d3c5e5;
 }
 
 .text-black {
@@ -272,8 +273,9 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
 }
 
 .text-color2 {
-  color: #b99769;
+  color: white;
 }
+
 
 .text-sm {
   font-size: 13px;
@@ -424,6 +426,7 @@ a {
   color: #fff;
 }
 
+
 .text-muted {
   color: #6c757d !important;
 }
@@ -568,7 +571,7 @@ ul.list-styled {
 }
 .header-top .top-btn {
   padding: 14px 25px;
-  background: #f89d35;
+  background: #d3c5e5;
   line-height: 40px;
   color: #fff;
 }
@@ -610,7 +613,7 @@ ul.list-styled {
   }
 }
 .header-top .header-top-info a i {
-  color: #f89d35;
+  color: #d3c5e5;
 }
 .header-top .btn {
   font-size: 12px !important;
@@ -725,7 +728,7 @@ ul.list-styled {
   color: #fff;
 }
 .slider .block p {
-  color: #b9b9b9;
+  color: white;
 }
 
 @media (max-width: 400px) {
