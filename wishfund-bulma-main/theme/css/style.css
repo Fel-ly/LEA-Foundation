@@ -16,7 +16,8 @@ body {
   font-family: "Montserrat", sans-serif;
   -webkit-font-smoothing: antialiased;
   font-size: 16px;
-  color: #464646;
+  color: #fff;
+  background-color: #735da5;
 }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
@@ -53,11 +54,11 @@ h6, .h6 {
 }
 
 p {
-  color: #6c757d;
+  color: #fff;
 }
 
 .navbar-toggle .icon-bar {
-  background: #f89d35;
+  background: #735da5;
 }
 
 input[type=email], input[type=password], input[type=text], input[type=tel] {
@@ -68,9 +69,21 @@ input[type=email], input[type=password], input[type=text], input[type=tel] {
 }
 input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, input[type=tel]:focus {
   box-shadow: none;
-  border: 1px solid #f89d35;
+  border: 1px solid #735da5;
 }
-
+.part1{
+  color: black
+  ;
+}
+.part2{
+  color: black;
+}
+.part3{
+  color: black;
+}
+.part4{
+  color: #fff;
+}
 .input {
   box-shadow: none;
   border-radius: 0;
@@ -79,13 +92,15 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
 }
 .input:focus {
   box-shadow: none;
-  border: 1px solid #f89d35;
+  border: 1px solid #735da5;
 }
 
 .py-7 {
   padding: 7rem 0px;
 }
-
+.h2P{
+  color: #735da5;
+}
 .btn {
   display: inline-block;
   font-size: 14px;
@@ -125,19 +140,19 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
   transition: all 0.2s ease;
 }
 .btn-main-2:hover {
-  background: #f89d35;
-  border-color: #f89d35;
+  background: #735da5;
+  border-color: #735da5;
   color: #fff;
 }
 
 .btn-solid-border {
-  border: 2px solid #f89d35;
+  border: 2px solid #735da5;
   background: transparent;
   color: #232323;
 }
 .btn-solid-border:hover {
-  border: 2px solid #f89d35;
-  background: #f89d35;
+  border: 2px solid #735da5;
+  background: #735da5;
 }
 
 .btn-solid-main-2 {
@@ -260,7 +275,7 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
 }
 
 .text-color {
-  color: #f89d35;
+  color: #d3c5e5;
 }
 
 .text-black {
@@ -272,8 +287,9 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
 }
 
 .text-color2 {
-  color: #b99769;
+  color: white;
 }
+
 
 .text-sm {
   font-size: 13px;
@@ -299,7 +315,7 @@ a {
 }
 
 a:focus, a:hover {
-  color: #f89d35;
+  color: #735da5;
   text-decoration: none;
 }
 
@@ -424,6 +440,7 @@ a {
   color: #fff;
 }
 
+
 .text-muted {
   color: #6c757d !important;
 }
@@ -498,7 +515,7 @@ ul.list-styled {
   border: 0;
   margin-top: 11px;
   color: #fff;
-  background-color: #f89d35;
+  background-color: #d3c5e5;
   outline: 0;
   height: 2.8rem;
   width: 2.8rem;
@@ -551,7 +568,7 @@ ul.list-styled {
   }
 }
 #navbar .navbar-link:hover, #navbar .navbar-link:focus {
-  color: #f89d35;
+  color: #735da5;
 }
 #navbar .btn:hover {
   color: #fff;
@@ -568,7 +585,7 @@ ul.list-styled {
 }
 .header-top .top-btn {
   padding: 14px 25px;
-  background: #f89d35;
+  background: #d3c5e5;
   line-height: 40px;
   color: #fff;
 }
@@ -610,7 +627,7 @@ ul.list-styled {
   }
 }
 .header-top .header-top-info a i {
-  color: #f89d35;
+  color: #d3c5e5;
 }
 .header-top .btn {
   font-size: 12px !important;
@@ -725,7 +742,7 @@ ul.list-styled {
   color: #fff;
 }
 .slider .block p {
-  color: #b9b9b9;
+  color: white;
 }
 
 @media (max-width: 400px) {
@@ -1369,8 +1386,8 @@ ul.list-styled {
   text-transform: capitalize;
 }
 .tags a:hover {
-  background-color: #f89d35;
-  border-color: #f89d35;
+  background-color: #735da5;
+  border-color: #735da5;
   color: white;
 }
 
@@ -1432,7 +1449,7 @@ ul.list-styled {
   margin: 10px 0;
 }
 .share-option a:hover {
-  background: #f89d35;
+  background:#735da5;
   color: #fff;
 }
 
