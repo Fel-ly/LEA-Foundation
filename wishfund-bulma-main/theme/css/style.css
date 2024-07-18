@@ -778,6 +778,9 @@ ul.list-styled {
 .mb-50 {
   margin-bottom: 50px;
 }
+.mb-5{
+  color: #000;
+}
 
 .about-2 {
   background: #f7f9f3;
@@ -821,7 +824,10 @@ ul.list-styled {
 }
 .cause-item .card-body {
   padding: 40px;
-  background-color: black;
+  background-color: white;
+}
+.card-text {
+  color: #000;
 }
 @media (max-width: 575px) {
   .cause-item .card-body {
@@ -1032,16 +1038,20 @@ ul.list-styled {
   padding-top: 300px;
 }
 .feature:before {
-  position: absolute;
-  content: "";
-  left: 0px;
-  right: 0px;
-  top: 0px;
-  width: 100%;
-  height: 70%;
-  background: url("../images/about/banner.jpg") no-repeat;
-  background-size: cover;
-}
+ 
+    position: absolute;
+    content: "";
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 70%;
+    background: url("../images/blog/Funday-66.jpg") no-repeat;
+    background-size: cover; /* Adjust this to contain if needed */
+    background-position: center center; /* Adjust position as needed */
+  }
+  
+
 
 .feature-inner {
   background: #fff;
