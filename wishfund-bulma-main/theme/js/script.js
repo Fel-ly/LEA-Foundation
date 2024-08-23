@@ -78,7 +78,18 @@
         },
       });
   });
-
+  $(document).ready(function() {
+    $('.gallery-popup').magnificPopup({
+      type: 'image',
+      gallery: {
+        enabled: true
+      },
+      zoom: {
+        enabled: true,
+        duration: 300
+      }
+    });
+  });
   var map;
 
   function initialize() {
@@ -106,3 +117,25 @@
     time: 1000,
   });
 })(jQuery);
+document.addEventListener('DOMContentLoaded', function() {
+  const introItems = document.querySelectorAll('.intro-item');
+
+  function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top < (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.bottom > 0
+    );
+  }
+
+  function handleScroll() {
+    introItems.forEach(item => {
+      if (isElementInViewport(item)) {
+        item.classList.add('visible');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', handleScroll);
+  handleScroll(); // Initial check to handle items already in view
+});

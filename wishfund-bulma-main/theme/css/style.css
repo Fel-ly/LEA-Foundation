@@ -93,7 +93,17 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
 }
 .h2P{
   color: #735da5;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    line-height: 1.3;
+    margin: 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    animation: slideInUp 1s ease-out forwards;
+   
 }
+
+
 .btn {
   display: inline-block;
   font-size: 14px;
@@ -213,21 +223,181 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
 .section {
   padding: 100px 0;
 }
-
+.section.causes {
+  background: linear-gradient(135deg, rgba(211, 197, 229, 0.1) 0%, rgba(150, 130, 182, 0.1) 100%);
+  padding: 60px 20px;
+  position: relative;
+  overflow: hidden;
+}
 .section-sm {
   padding: 70px 0;
 }
-
+/* Section Title Styling */
 .section-title {
-  margin-bottom: 70px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  margin-bottom: 40;
 }
-.section-title .title {
-  font-size: 50px;
-  line-height: 50px;
+.section-title .text-color {
+  color: #f89d35;
+  font-weight: bold;
+  text-transform: uppercase;
 }
-.section-title p {
-  color: #666;
-  font-family: "Montserrat", sans-serif;
+.section-title .content-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: white;
+  position: relative;
+}
+.section-title .content-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 50px;
+  height: 4px;
+  border-radius: 2px;
+}
+/* Section Title Decorative Underline */
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: var(--highlight-color);
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  border-radius: 2px;
+  animation: underlinePulse 1.5s infinite;
+}
+/* Gallery Grid Styling */
+.columns {
+  display: flex;
+ 
+ 
+
+}
+.cause-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  background: #d3c5e5;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cause-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+/* Hover Effect for Gallery Item */
+.cause-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  background: #d1b9f5;
+}
+
+.cause-item:hover img {
+  transform: scale(1.1);
+}
+/* Card Body Styling */
+.card-body {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 10px;
+  position: relative;
+  z-index: 1;
+  height: 50vh;
+}
+
+.card-body h3 a {
+  color: #f89d35;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+.card-body h3 a:hover {
+  color: #FF4560;
+}
+
+/* Responsive Enhancements */
+@media (max-width: 768px) {
+  .section-title .content-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .columns {
+    gap: 10px;
+  }
+
+  .cause-item {
+    padding: 5px;
+  }
+}
+/* Animation for the Decorative Underline */
+@keyframes underlinePulse {
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+}
+
+/* Content Title Styling */
+.content-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  line-height: 1.3;
+  color: var(--text-color);
+  margin-top: 0.5rem;
+  font-weight: 600;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 1s ease-out forwards;
+  opacity: 0;
+}
+
+/* Paragraph Styling */
+.part1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  margin-top: 1rem;
+  animation: fadeInUp 1.2s ease-out forwards;
+  opacity: 0;
+}
+
+/* Animation for Text Fade-in */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .subtitle {
@@ -723,58 +893,101 @@ ul.list-styled {
 }
 
 .slider {
-  background: url("../images/bg/LEANEW.jpg") no-repeat;
-  background-size: cover;
-  background-position: 10% 40%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+              url("../images/bg/LEANEW.jpg") no-repeat center center/cover;
   padding: 100px 0;
   position: relative;
-}
-.slider .block h1 {
-  font-size: 80px;
-  line-height: 80px;
   color: #fff;
-}
-.slider .block p {
-  color: white;
+  background-attachment: fixed;
 }
 
-@media (max-width: 400px) {
-  .slider .block h1 {
-    font-size: 41px;
-    line-height: 57px;
+.slider h1, .slider p {
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+
+
+
+/* Slider Styles */
+.slider {
+  padding: 120px 0;
+  background-color: #222;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.slider h1 {
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  opacity: 0;
+  animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.slider p {
+  font-size: 20px;
+  opacity: 0;
+  animation: fadeInUp 1.5s ease-in-out forwards;
+  animation-delay: 0.5s;
+}
+
+/* Keyframe Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
-@media (max-width: 400px) {
-  .slider .block h1 {
-    font-size: 28px;
-    line-height: 40px;
+
+/* Letter Stagger Animation */
+.slider h1 {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.slider h1 span {
+  display: inline-block;
+  opacity: 0;
+  animation: fadeInLetter 0.5s forwards;
+  animation-delay: calc(0.05s * var(--i));
+}
+
+@keyframes fadeInLetter {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  .slider {
-    padding: 126px 0 151px 0;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
-@media (max-width: 575px) {
-  .slider .block h1 {
-    font-size: 38px;
-    line-height: 50px;
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .slider h1 {
+    font-size: 36px;
   }
-  .slider {
-    padding: 126px 0 151px 0;
-  }
-}
-@media (max-width: 768px) {
-  .slider .block h1 {
-    font-size: 56px;
-    line-height: 70px;
+
+  .slider p {
+    font-size: 18px;
   }
 }
+
 .mb-50 {
   margin-bottom: 50px;
 }
 .mb-5{
-  color: #000;
+  color: black;
 }
-
+.mb-51{
+  color: white;
+}
 .about-2 {
   background: #f7f9f3;
 }
@@ -1295,12 +1508,169 @@ ul.list-styled {
     padding-top: 30px;
   }
 }
-.gallery .gallery-item a {
-  display: block;
-  line-height: 0;
+/* Gallery Section Styling */
+.gallery {
+  width: 100%;
+  background: linear-gradient(180deg, rgba(147, 122, 186, 0.7) 50%, rgba(115, 93, 165, 1) 0%, rgba(147, 122, 186, 0.7) 50%,);
+  padding: 20px 0;
+  box-sizing: border-box;
 }
-.gallery .gallery-item a img {
-  margin-bottom: 0;
+
+.gallery .section-title {
+  margin-bottom: 60px;
+  text-align: center;
+  color: white;
+  max-width: 100%;
+  margin: 0 auto 60px auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1); /* Slight background behind text */
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.gallery .section-title .text-color {
+  color: #f89d35; /* Accent color for the section title */
+  font-weight: bold;
+  text-transform: uppercase; /* All caps for emphasis */
+}
+
+.gallery .section-title .content-title {
+  font-size: 2.0rem;
+  font-weight: 700;
+  color: black; /* Dark color for the title text */
+  position: relative;
+  display: inline-block;
+  padding-bottom: 15px;
+}
+
+/* Adding an animated underline effect to the title */
+.gallery .section-title .content-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 6px;
+  background: #f89d35;
+  border-radius: 8px;
+  transition: width 0.6s ease-in-out;
+}
+
+.gallery .section-title:hover .content-title::after {
+  width: 100%;
+}
+/* Gallery Grid Styling */
+.gallery-wrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+  gap: 20px; /* Spacing between items */
+  padding: 20px; /* Padding around the grid */
+  justify-content: center; /* Center grid items horizontally */
+}
+
+/* Gallery Item Styling */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px; /* More pronounced rounded corners */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Deeper shadow for depth */
+  transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease; /* Smooth transitions */
+  cursor: pointer;
+  background: linear-gradient(135deg, rgba(211, 197, 229, 0.8) 0%, rgba(150, 130, 182, 0.9) 100%);
+  padding: 5px; /* Padding inside gallery item */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Ensures that the image doesn't overflow */
+}
+
+/* Overlay Gradient Effect */
+.gallery-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.6) 100%), 
+              rgba(211, 197, 229, 0.5); /* Blend with a translucent version of your color */
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.gallery-item:hover::before {
+  opacity: 1;
+}
+
+
+/* Image Styling */
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease, filter 0.5s ease; /* Smooth scaling and filter transition */
+  border-radius: 20px; /* Rounded corners for images */
+}
+
+/* Hover Effect for Gallery Item */
+.gallery-item:hover {
+  border: 2px solid #d3c5e5; /* Accent border color */
+  transform: scale(1.1); /* Slightly larger scale effect */
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
+  filter: brightness(0.85); /* Darker filter on hover */
+}
+
+/* Image Hover Effect */
+.gallery-item:hover img {
+  transform: scale(1.15); /* Larger zoom on image */
+  filter: brightness(1.2) contrast(1.1); /* Brighter image on hover */
+}
+
+/* Lightbox Popup Styling */
+.gallery-popup {
+  display: block;
+}
+
+.gallery-popup img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px; /* Rounded corners for popup images */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* Enhanced shadow for popup images */
+}
+
+/* Section Divider Styling */
+.section-divider {
+  height: 10px; /* Taller divider */
+  border-radius: 4px;
+  margin: 100px 0; /* Increased margin */
+  position: relative; /* For positioning the pseudo-element */
+}
+
+/* Pseudo-Element for Divider Enhancement */
+.section-divider::before {
+  content: '';
+  position: absolute;
+  top: -6px; /* Slightly above the main divider */
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, rgba(0, 0, 0, 0) 100%); /* Radial gradient for a subtle glow effect */
+  border-radius: 4px;
+}
+
+/* Responsive Enhancements */
+@media (max-width: 768px) {
+  .gallery-wrap {
+    padding: 10px; /* Reduced padding on smaller screens */
+  }
+  .gallery-item {
+    padding: 5px; /* Reduced padding inside gallery item */
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-wrap {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Smaller columns on very small screens */
+  }
 }
 
 .contact-wrap .input {
@@ -1350,6 +1720,162 @@ ul.list-styled {
 .section-bottom {
   padding-bottom: 80px;
 }
+/* General Styles */
+.section.intro {
+  padding: 60px 0;
+ ;
+}
+
+.section-title {
+  font-size: 28px;
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.content-title {
+  font-size: 36px;
+  color: black;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.part1 {
+  font-size: 18px;
+  color:white;
+  line-height: 1.8;
+}
+/* Initial styles for .intro-item */
+.intro-item {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 20px;
+  height: 65vh; /* Adjust if necessary */
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  opacity: 1; /* Initially visible */
+  transform: translateX(300px); /* Start position for sliding effect */
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  margin-bottom: 20px; /* Ensure spacing between items */
+}
+
+
+
+
+/* Animation for sliding in */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(300px); /* Customize start position */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Apply animation with delay to each item */
+.intro-item.visible {
+  animation: slideIn 0.5s ease-in-out forwards;
+}
+
+/* Hover effects */
+.intro-item img {
+  width: 100%;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+.intro-item:hover img {
+  transform: scale(1.05);
+}
+
+.intro-item h4 {
+  font-size: 24px;
+  color: #333;
+  font-weight: 600;
+  margin: 15px 0;
+}
+
+.intro-item p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Overlay effect on hover */
+.intro-item:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.intro-item:hover:before {
+  opacity: 1;
+}
+
+/* Ensure equal height of columns */
+.columns.is-multiline.is-justify-content-center {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Space between items */
+  justify-content: center; /* Center align the columns */
+}
+
+/* Ensure columns have equal width */
+.column.is-3-desktop.is-6-tablet {
+  flex: 1 1 calc(25% - 20px); /* Adjust to ensure equal width and spacing */
+  max-width: calc(25% - 20px);
+}
+
+.column.is-6-desktop.is-12-tablet {
+  flex: 1 1 calc(50% - 20px); /* Adjust for larger columns */
+  max-width: calc(50% - 20px);
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+  .column.is-3-desktop.is-6-tablet {
+    flex: 1 1 100%; /* Full width on smaller screens */
+    max-width: 100%;
+  }
+}
+
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .section-title {
+    font-size: 24px;
+  }
+
+  .content-title {
+    font-size: 30px;
+  }
+
+  .part1 {
+    font-size: 16px;
+  }
+
+  .intro-item h4 {
+    font-size: 20px;
+  }
+
+  .intro-item p {
+    font-size: 14px;
+  }
+}
+
 
 /*=================================================================
   Latest Posts
