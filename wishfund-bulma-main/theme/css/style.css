@@ -1750,7 +1750,7 @@ ul.list-styled {
 .intro-item {
   display: flex;
   flex-direction: column;
-  background-color: #fff;
+  background-color: #E6E6FA;
   padding: 20px;
   height: 65vh; /* Adjust if necessary */
   border-radius: 10px;
