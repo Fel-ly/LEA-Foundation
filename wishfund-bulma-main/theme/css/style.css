@@ -1758,7 +1758,7 @@ ul.list-styled {
   position: relative;
   opacity: 1; /* Initially visible */
   transform: translateX(300px); /* Start position for sliding effect */
-  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  transition: transform 0.9s ease-in-out, opacity 0.9s ease-in-out;
   margin-bottom: 20px; /* Ensure spacing between items */
 }
 
@@ -1779,7 +1779,7 @@ ul.list-styled {
 
 /* Apply animation with delay to each item */
 .intro-item.visible {
-  animation: slideIn 0.5s ease-in-out forwards;
+  animation: slideIn 0.9s ease-in-out forwards;
 }
 
 /* Hover effects */
