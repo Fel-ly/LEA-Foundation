@@ -131,7 +131,11 @@ document.addEventListener('DOMContentLoaded', function() {
   function handleScroll() {
     introItems.forEach(item => {
       if (isElementInViewport(item)) {
-        item.classList.add('visible');
+        if (!item.classList.contains('visible')) {
+          item.classList.add('visible');
+        }
+      } else {
+        item.classList.remove('visible'); // Remove class when out of view to reset the animation
       }
     });
   }
