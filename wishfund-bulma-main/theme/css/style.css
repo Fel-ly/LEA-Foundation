@@ -1511,9 +1511,9 @@ ul.list-styled {
 /* Gallery Section Styling */
 .gallery {
   width: 100%;
-  background: linear-gradient(180deg, rgba(147, 122, 186, 0.7) 50%, rgba(115, 93, 165, 1) 0%, rgba(147, 122, 186, 0.7) 50%,);
   padding: 20px 0;
   box-sizing: border-box;
+  overflow: hidden; /* Prevents overflow for animations */
 }
 
 .gallery .section-title {
@@ -1523,30 +1523,33 @@ ul.list-styled {
   max-width: 100%;
   margin: 0 auto 60px auto;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.1); /* Slight background behind text */
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 4px;
   box-sizing: border-box;
+  animation: fadeIn 1.5s ease-in-out; /* Smooth fade-in animation */
 }
+
 .gallery .section-title .text-color {
-  color: #f89d35; /* Accent color for the section title */
+  color: #f89d35;
   font-weight: bold;
-  text-transform: uppercase; /* All caps for emphasis */
+  text-transform: uppercase;
 }
 
 .gallery .section-title .content-title {
-  font-size: 2.0rem;
+  font-size: 1.0rem; /* Increased font size */
   font-weight: 700;
-  color: black; /* Dark color for the title text */
+  color: white; /* Change title text color to white */
   position: relative;
   display: inline-block;
   padding-bottom: 15px;
+  letter-spacing: 2px; /* Add letter spacing for a modern look */
 }
 
-/* Adding an animated underline effect to the title */
 .gallery .section-title .content-title::after {
   content: "";
   position: absolute;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   bottom: 0;
   width: 0;
   height: 6px;
@@ -1558,120 +1561,171 @@ ul.list-styled {
 .gallery .section-title:hover .content-title::after {
   width: 100%;
 }
+
 /* Gallery Grid Styling */
 .gallery-wrap {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
-  gap: 20px; /* Spacing between items */
-  padding: 20px; /* Padding around the grid */
-  justify-content: center; /* Center grid items horizontally */
-}
-
-/* Gallery Item Styling */
-.gallery-item {
-  position: relative;
-  overflow: hidden;
-  border-radius: 5px; /* More pronounced rounded corners */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Deeper shadow for depth */
-  transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease; /* Smooth transitions */
-  cursor: pointer;
-  background: linear-gradient(135deg, rgba(211, 197, 229, 0.8) 0%, rgba(150, 130, 182, 0.9) 100%);
-  padding: 5px; /* Padding inside gallery item */
-  display: flex;
-  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px; /* Increased spacing between items */
+  padding: 20px;
   justify-content: center;
-  overflow: hidden; /* Ensures that the image doesn't overflow */
+  opacity: 0;
+  transform: translateY(50px); /* Initial position for slide-up effect */
+  animation: fadeInUp 1s ease-in-out forwards 0.3s; /* Slide-up effect on load */
+}
+/* Magnetic Pull Effect */
+.gallery-item {
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  will-change: transform, box-shadow;
 }
 
-/* Overlay Gradient Effect */
+.gallery-item:hover {
+  transform: scale(1.05) translate(5px, -5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Dynamic Lighting Effect - Adjusted */
 .gallery-item::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.gallery-item:hover::before {
+  /* Keeping the effect subtle without scaling */
+  opacity: 0.3;
+  transform: none; /* Remove scaling to avoid blurriness */
+}
+
+/* Parallax Hover Effect */
+.gallery-item img {
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05) translateY(-5px); /* Adjusted to avoid excessive blurriness */
+}
+
+/* Fluid Item Expansion */
+.gallery-item::after {
+  content: attr(data-title);
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  color: white;
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: translateY(20px);
+}
+
+.gallery-item:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Organic Hover Shape */
+.gallery-item {
+  border-radius: 5px;
+  transition: transform 0.5s ease, border-radius 0.5s ease;
+}
+
+.gallery-item:hover {
+  border-radius: 10px;
+  transform: scale(1.05) skew(1deg, 1deg);
+}
+
+/* Interactive Shadows */
+.gallery-item {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.gallery-item::after {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.6) 100%), 
-              rgba(211, 197, 229, 0.5); /* Blend with a translucent version of your color */
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.2), transparent 70%);
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.gallery-item:hover::before {
+.gallery-item:hover::after {
   opacity: 1;
-}
-
-
-/* Image Styling */
-.gallery-item img {
-  display: block;
-  width: 100%;
-  height: auto;
-  transition: transform 0.5s ease, filter 0.5s ease; /* Smooth scaling and filter transition */
-  border-radius: 20px; /* Rounded corners for images */
-}
-
-/* Hover Effect for Gallery Item */
-.gallery-item:hover {
-  border: 2px solid #d3c5e5; /* Accent border color */
-  transform: scale(1.1); /* Slightly larger scale effect */
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
-  filter: brightness(0.85); /* Darker filter on hover */
-}
-
-/* Image Hover Effect */
-.gallery-item:hover img {
-  transform: scale(1.15); /* Larger zoom on image */
-  filter: brightness(1.2) contrast(1.1); /* Brighter image on hover */
-}
-
-/* Lightbox Popup Styling */
-.gallery-popup {
-  display: block;
-}
-
-.gallery-popup img {
-  width: 100%;
-  height: auto;
-  border-radius: 20px; /* Rounded corners for popup images */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* Enhanced shadow for popup images */
+  transform: none; /* No scaling */
 }
 
 /* Section Divider Styling */
 .section-divider {
-  height: 10px; /* Taller divider */
+  height: 10px;
   border-radius: 4px;
-  margin: 100px 0; /* Increased margin */
-  position: relative; /* For positioning the pseudo-element */
+  margin: 100px 0;
+  position: relative;
 }
 
-/* Pseudo-Element for Divider Enhancement */
 .section-divider::before {
   content: '';
   position: absolute;
-  top: -6px; /* Slightly above the main divider */
+  top: -6px;
   left: 0;
   width: 100%;
   height: 8px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, rgba(0, 0, 0, 0) 100%); /* Radial gradient for a subtle glow effect */
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
   border-radius: 4px;
 }
 
 /* Responsive Enhancements */
 @media (max-width: 768px) {
   .gallery-wrap {
-    padding: 10px; /* Reduced padding on smaller screens */
+    padding: 10px;
   }
   .gallery-item {
-    padding: 5px; /* Reduced padding inside gallery item */
+    padding: 0;
   }
 }
 
 @media (max-width: 480px) {
   .gallery-wrap {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Smaller columns on very small screens */
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   }
 }
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 
 .contact-wrap .input {
   height: 48px;
@@ -1872,7 +1926,7 @@ ul.list-styled {
   }
 
   .intro-item p {
-    font-size: 14px;
+    font-size: 10px;
   }
 }
 
