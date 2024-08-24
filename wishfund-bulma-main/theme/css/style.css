@@ -2108,7 +2108,7 @@ ul.list-styled {
   background: linear-gradient(90deg,#f89d35, rgba(255, 105, 97, 0));
   z-index: -1;
   transform: skewX(-20deg);
-  animation: slideBackground 4s linear infinite;
+  animation: slideBackground 80s linear infinite;
 }
 
 /* Keyframes for background animation */
