@@ -219,12 +219,10 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
   background-image: linear-gradient(145deg, rgba(19, 177, 205, 0.95) 0%, rgba(152, 119, 234, 0.95) 100%);
   background-repeat: repeat-x;
 
-}
-
-/* General section padding */
+}/* General section padding */
 .recent-projects-section {
   padding: 100px 0;
-  background: linear-gradient(135deg, rgba(211, 197, 229, 0.1) 0%, rgba(150, 130, 182, 0.1) 100%);
+  background: linear-gradient(135deg, rgba(131, 59, 225, 0.1) 0%, rgba(150, 130, 182, 0.1) 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -258,7 +256,7 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
   color: white;
   text-align: center;
   z-index: 1;
-  border: 2px solid rgba(255, 255, 255, 0.1);; /* Base border for animation */
+  border: 2px solid rgba(255, 255, 255, 0.1); /* Base border for animation */
 }
 
 /* Animated border effect */
@@ -276,7 +274,6 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
   animation: borderPulse 3s infinite; /* Slower pulse for a subtle effect */
 }
 
-
 /* Line effect added */
 .title-box::after {
   content: "";
@@ -285,10 +282,11 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
   left: 50%;
   width: 50%;
   height: 4px;
-  background-color: rgba(109, 120, 13, 0.1);; /* Line color */
+  background-color: rgba(109, 120, 13, 0.1); /* Line color */
   border-radius: 2px;
   transform: translateX(-50%);
 }
+
 /* Title styling */
 .section-title {
   position: relative;
@@ -303,12 +301,14 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
   font-size: 1.0rem; /* Adjusted font size for better readability */
   margin-bottom: 0.5rem; /* Reduced margin for tighter spacing */
 }
+
 .section-title .main-title {
   font-size: 1.2rem; /* Larger font size for a modern look */
   font-weight: 700;
   color: black;
   margin-bottom: 0.5rem;
 }
+
 /* Keyframes for border pulse animation */
 @keyframes borderPulse {
   0% {
@@ -324,6 +324,7 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
     opacity: 1;
   }
 }
+
 @keyframes lineExpand {
   0% {
     width: 0;
@@ -338,20 +339,21 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
     opacity: 0;
   }
 }
+
 /* Flex container for projects */
 .projects-columns {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
+  flex-wrap: wrap; /* Allow items to wrap to next line */
+  justify-content: center; /* Center items horizontally */
+  gap: 1rem; /* Space between items */
 }
 
 /* Individual project item styling */
 .project-item {
   display: flex;
   flex-direction: column;
-  flex: 1 1 calc(33.333% - 1rem);
-  max-width: calc(33.333% - 1rem);
+  flex: 1 1 calc(33.333% - 1rem); /* Adjust width for wrapping */
+  max-width: calc(33.333% - 1rem); /* Ensure proper sizing */
   box-sizing: border-box;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -367,7 +369,6 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
 }
 
 /* Slide-in effect for project items */
-/* Updated Slide-in Effect */
 .project-item {
   animation: slideIn 0.6s ease-out;
 }
@@ -382,7 +383,6 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
     transform: translateY(0);
   }
 }
-
 
 /* Image styling */
 .project-image {
@@ -408,6 +408,7 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
 .project-text {
   margin: 0;
 }
+
 /* New class for animation */
 .project-item.animate {
   opacity: 0;
@@ -420,18 +421,6 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
   transform: translateY(0);
 }
 
-/* Updated Slide-in effect to apply only when animated */
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 /* Responsive adjustments for tablets */
 @media (max-width: 768px) {
   .project-item {
@@ -440,6 +429,13 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
   }
 }
 
+/* Responsive adjustments for mobile devices */
+@media (max-width: 480px) {
+  .project-item {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
 
 
 /* Animation for the Decorative Underline */
