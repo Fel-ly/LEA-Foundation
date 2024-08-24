@@ -218,136 +218,232 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
 .bg-gradient {
   background-image: linear-gradient(145deg, rgba(19, 177, 205, 0.95) 0%, rgba(152, 119, 234, 0.95) 100%);
   background-repeat: repeat-x;
+
 }
 
-.section {
+/* General section padding */
+.recent-projects-section {
   padding: 100px 0;
-}
-.section.causes {
   background: linear-gradient(135deg, rgba(211, 197, 229, 0.1) 0%, rgba(150, 130, 182, 0.1) 100%);
-  padding: 60px 20px;
-  position: relative;
-  overflow: hidden;
-}
-.section-sm {
-  padding: 70px 0;
-}
-/* Section Title Styling */
-.section-title {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.2rem;
-  color: var(--primary-color);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  position: relative;
-  margin-bottom: 40;
-}
-.section-title .text-color {
-  color: #f89d35;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-.section-title .content-title {
-  font-size: 2.5rem;
-  font-weight: 600;
-  color: white;
-  position: relative;
-}
-.section-title .content-title::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -10px;
-  width: 50px;
-  height: 4px;
-  border-radius: 2px;
-}
-/* Section Title Decorative Underline */
-.section-title::after {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 4px;
-  background-color: var(--highlight-color);
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  border-radius: 2px;
-  animation: underlinePulse 1.5s infinite;
-}
-/* Gallery Grid Styling */
-.columns {
-  display: flex;
- 
- 
-
-}
-.cause-item {
-  position: relative;
-  overflow: hidden;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-  background: #d3c5e5;
-  padding: 10px;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
-.cause-item img {
+/* Container settings */
+.container {
   width: 100%;
-  height: auto;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
+  max-width: 1200px;
+  padding: 0 1rem;
 }
 
-/* Hover Effect for Gallery Item */
-.cause-item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-  background: #d1b9f5;
+/* Section header styling */
+.section-header {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  margin-bottom: 60px; /* Increased space below the title box */
 }
 
-.cause-item:hover img {
-  transform: scale(1.1);
+/* Title box with animated background effect */
+.title-box {
+  position: relative;
+  display: inline-block;
+  width: 100%; /* Full width of the screen */
+  padding: 3rem; /* Increased padding for more space */
+  border-radius: 1px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  background: rgba(6, 6, 6, 0.8); /* Dark semi-transparent background */
+  overflow: hidden;
+  color: white;
+  text-align: center;
+  z-index: 1;
+  border: 2px solid transparent; /* Base border for animation */
 }
-/* Card Body Styling */
-.card-body {
-  background: rgba(255, 255, 255, 0.9);
-  padding: 20px;
-  border-radius: 10px;
-  margin-top: 10px;
+
+/* Animated border effect */
+.title-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #9858d1; /* Border color */
+  border-radius: 15px;
+  box-sizing: border-box;
+  z-index: -1;
+  animation: borderPulse 4s infinite; /* Animation for border effect */
+}
+
+
+/* Line effect added */
+.title-box::after {
+  content: "";
+  position: absolute;
+  bottom: 10px; /* Adjusted for better alignment */
+  left: 50%;
+  width: 0;
+  height: 4px;
+  background-color: #f89d35; /* Line color */
+  border-radius: 2px;
+  transform: translateX(-50%);
+  animation: lineExpand 4s ease-in-out infinite; /* Animation for line effect */
+}
+
+
+/* Title styling */
+.section-title {
   position: relative;
   z-index: 1;
-  height: 50vh;
 }
 
-.card-body h3 a {
+.section-title .highlight-text {
   color: #f89d35;
-  text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s ease;
-}
-.card-body h3 a:hover {
-  color: #FF4560;
+  display: block;
+  font-size: 1.0rem;
+  margin-bottom: 10px;
 }
 
-/* Responsive Enhancements */
+.section-title .main-title {
+  font-size: 1.5rem; /* Adjusted font size for better visibility */
+  font-weight: 600;
+  color: white;
+  margin: 0;
+}
+
+/* Keyframes for border pulse animation */
+@keyframes borderPulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes lineExpand {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  50% {
+    width: 80%;
+    opacity: 1;
+  }
+  100% {
+    width: 0;
+    opacity: 0;
+  }
+}
+/* Flex container for projects */
+.projects-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Individual project item styling */
+.project-item {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 calc(33.333% - 1rem);
+  max-width: calc(33.333% - 1rem);
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover effect for project items */
+.project-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Slide-in effect for project items */
+.project-item {
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Image styling */
+.project-image {
+  width: 100%;
+  height: auto;
+}
+
+/* Description styling */
+.project-description {
+  padding: 1rem;
+}
+
+.project-description p {
+  margin: 0;
+  color: black;
+  line-height: 1.6;
+}
+
+.project-title {
+  margin: 0 0 0.5rem;
+}
+
+.project-text {
+  margin: 0;
+}
+/* New class for animation */
+.project-item.animate {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.project-item.animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Updated Slide-in effect to apply only when animated */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments for tablets */
 @media (max-width: 768px) {
-  .section-title .content-title {
-    font-size: 2rem;
+  .project-item {
+    flex: 1 1 calc(50% - 1rem);
+    max-width: calc(50% - 1rem);
   }
 }
 
-@media (max-width: 480px) {
-  .columns {
-    gap: 10px;
-  }
 
-  .cause-item {
-    padding: 5px;
-  }
-}
+
 /* Animation for the Decorative Underline */
 @keyframes underlinePulse {
   0% {
