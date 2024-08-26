@@ -78,7 +78,18 @@
         },
       });
   });
-
+  $(document).ready(function() {
+    $('.gallery-popup').magnificPopup({
+      type: 'image',
+      gallery: {
+        enabled: true
+      },
+      zoom: {
+        enabled: true,
+        duration: 300
+      }
+    });
+  });
   var map;
 
   function initialize() {
@@ -106,3 +117,118 @@
     time: 1000,
   });
 })(jQuery);
+document.addEventListener('DOMContentLoaded', function() {
+  const introItems = document.querySelectorAll('.intro-item');
+
+  function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top < (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.bottom > 0
+    );
+  }
+
+  function handleScroll() {
+    introItems.forEach(item => {
+      if (isElementInViewport(item)) {
+        if (!item.classList.contains('visible')) {
+          item.classList.add('visible');
+        }
+      } else {
+        item.classList.remove('visible'); // Remove class when out of view to reset the animation
+      }
+    });
+  }
+
+  window.addEventListener('scroll', handleScroll);
+  handleScroll(); // Initial check to handle items already in view
+});
+AOS.init({
+  duration: 800, // duration of the animation
+  once: true,    // whether animation should happen only once
+});
+document.addEventListener('DOMContentLoaded', function() {
+  // Select all project items
+  const projectItems = document.querySelectorAll('.project-item');
+
+  // Intersection Observer callback function
+  const observerCallback = (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      } else {
+        entry.target.classList.remove('visible');
+      }
+    });
+  };
+
+  // Create an Intersection Observer instance
+  const observer = new IntersectionObserver(observerCallback, {
+    threshold: 0.2 // Adjust this value as needed
+  });
+
+  // Observe each project item
+  projectItems.forEach(item => {
+    item.classList.add('animate');
+    observer.observe(item);
+  });
+});
+document.addEventListener('DOMContentLoaded', () => {
+  const slideshowItems = document.querySelectorAll('.slideshow-item');
+  let currentIndex = 0;
+
+  function showSlide(index) {
+    slideshowItems.forEach((item, i) => {
+      item.style.opacity = (i === index) ? '1' : '0';
+    });
+  }
+
+  document.querySelector('.next').addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % slideshowItems.length;
+    showSlide(currentIndex);
+  });
+
+  document.querySelector('.prev').addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + slideshowItems.length) % slideshowItems.length;
+    showSlide(currentIndex);
+  });
+
+  // Initial slide
+  showSlide(currentIndex);
+
+  // Optional: Auto-slide
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % slideshowItems.length;
+    showSlide(currentIndex);
+  }, 5000); // Change slide every 5 seconds
+})
+document.addEventListener('DOMContentLoaded', () => {
+  const slideshowItems = document.querySelectorAll('.slideshow-item');
+  let currentIndex = 0;
+
+  function showSlide(index) {
+    slideshowItems.forEach((item, i) => {
+      item.style.opacity = (i === index) ? '1' : '0';
+    });
+  }
+
+  document.querySelector('.next').addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % slideshowItems.length;
+    showSlide(currentIndex);
+  });
+
+  document.querySelector('.prev').addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + slideshowItems.length) % slideshowItems.length;
+    showSlide(currentIndex);
+  });
+
+  // Initial slide
+  showSlide(currentIndex);
+
+  // Optional: Auto-slide
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % slideshowItems.length;
+    showSlide(currentIndex);
+  }, 5000); // Change slide every 5 seconds
+});
+
