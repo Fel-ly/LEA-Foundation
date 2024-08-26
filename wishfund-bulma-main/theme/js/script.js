@@ -232,3 +232,4 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 5000); // Change slide every 5 seconds
 });
 
+
