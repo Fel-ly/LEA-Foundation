@@ -862,8 +862,9 @@ ul.list-styled {
   height: auto;
 }
 .volunteer-form .btn:hover {
-  color: #fff;
+  color: #000000;
   border-color: #d3c5e5;
+  background-color: #863bae;
 }
 
 .clients-wrap a {
