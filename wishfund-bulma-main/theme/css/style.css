@@ -138,9 +138,9 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
 }
 
 .btn-main-2 {
-  background: #863bae;
+  background: #f89d35;
   color: #fff;
-  transition: all 0.2s ease;
+  transition: all 250ms ease;
 }
 .btn-main-2:hover {
   background: #735da5;
@@ -1083,6 +1083,10 @@ ul.list-styled {
   background: #f7f9f3;
 }
 
+.ptners:hover{
+  transform: scale(1.5);
+}
+
 .about-item-block {
   clear: both;
 }
@@ -1166,8 +1170,9 @@ ul.list-styled {
   height: auto;
 }
 .volunteer-form .btn:hover {
-  color: #fff;
+  color: #000000;
   border-color: #d3c5e5;
+  background-color: #863bae;
 }
 
 .clients-wrap a {
