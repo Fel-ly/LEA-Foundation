@@ -1109,6 +1109,9 @@ ul.list-styled {
     transform: translateY(0);
   }
 }
+.mb-51{
+  color:white;
+}
 
 /* Responsive Design */
 @media (max-width: 1024px) {
@@ -1132,61 +1135,132 @@ ul.list-styled {
   margin: 0 auto; /* Center the text */
   text-align: center; /* Center the text */
 }
-
-
-/* Additional Section Styling */
-.about-item-content h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-.mb-3{
-  color: #f89d35;
+/* Section Styling */
+.about-page {
+  position: relative;
+  background: #2c003e;
+  padding: 80px 20px;
+  overflow: hidden;
 }
 
-.about-item-content p {
-  margin-bottom: 1.5rem;
-  padding-left: 2rem;
+/* Dynamic Background Pattern */
+.about-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('images/background-pattern.png') repeat; /* Add a repeating pattern or texture */
+  z-index: 1;
+  animation: patternAnimation 10s infinite linear;
 }
-.mt-6 {
-  color:#f89d35;
+
+/* Animation for the Background Pattern */
+@keyframes patternAnimation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
 }
+
+/* Container Positioning */
+.container {
+  position: relative;
+  z-index: 2;
+}
+
 /* Image Handling */
 .about-item-img {
   position: relative;
   overflow: hidden;
+  border-radius: 15px;
 }
 
 .about-item-img img {
-  transition: opacity 0.5s ease-in-out;
-  display: block;
   width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 15px;
+  transition: filter 0.5s ease, transform 0.5s ease;
 }
 
-/* JavaScript to handle image changes */
-.image-changer {
-  cursor: pointer;
+.about-item-img:hover img {
+  filter: brightness(0.8) blur(2px);
+  transform: scale(1.05);
 }
 
-.image-changer:hover {
-  opacity: 0.7;
+/* Content Styling */
+.about-item-content {
+  color: #f9f9f9;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for contrast */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  position: relative;
+  font-size: 0.5rem;
+
+  z-index: 2;
 }
 
-.mb-51{
-  color: white;
-}
-.about-2 {
-  background: #f7f9f3;
-}
-
-.ptners:hover{
-  transform: scale(1.5);
+.about-item-content .content-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #f89d35; /* Gold accent */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.about-item-block {
-  clear: both;
+.about-item-content p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  font-size: 1.1rem;
 }
+
+/* Subtle Animations */
+.about-item-content {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .about-page {
+    padding: 40px 10px;
+  }
+
+  .about-item-content {
+    padding: 15px;
+    text-align: center;
+  }
+
+  .about-item-img {
+    margin-bottom: 20px;
+  }
+
+  .about-item-content .content-title {
+    font-size: 2rem;
+  }
+
+  .about-item-content p {
+    font-size: 0.5rem;
+  }
+}
+
+
 .about-item-block .icon {
   float: left;
   margin-right: 40px;
@@ -1454,50 +1528,99 @@ ul.list-styled {
 @media (max-width: 575px) {
   .about-item-content {
     padding-left: 0 !important;
+  }}
+  .feature {
+    background-color: #2c003e;
+    position: relative;
+    padding-top: 200px;
+    padding-bottom: 100px; /* Added padding at the bottom for spacing */
   }
-}
-
-.feature {
-  position: relative;
-  padding-top: 300px;
-}
-.feature:before {
- 
+  
+  .feature:before {
     position: absolute;
     content: "";
-    left: 0px;
-    right: 0px;
-    top: 0px;
+    left: 0;
+    right: 0;
+    top: 0;
     width: 100%;
-    height: 70%;
+    height: 90%; /* Reduced the height for a subtler effect */
     background: url("../images/blog/Funday-66.jpg") no-repeat;
-    background-size: cover; /* Adjust this to contain if needed */
-    background-position: center center; /* Adjust position as needed */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2; /* Subtle opacity */
+    filter: blur(2px); /* Reduced blur for clarity */
+    transform: scale(1.05); /* Slightly reduced scale */
+  }
+  
+  .feature-inner {
+    background: black; /* Slightly transparent black background */
+    padding: 30px;
+    border-radius: 10px; /* Smooth rounded corners */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4); /* Soft shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: slideInUp 1s ease-out, fadeIn 1.2s ease-in-out; /* Combined animations */
+    text-align: center; /* Centered content */
+  }
+  
+  .feature-inner:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: #4b0082;
+  }
+  
+  .feature-inner i {
+    font-size: 60px;
+    color: #f89d35;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .feature-inner:hover i {
+    color: #ffd700;
+    transform: rotate(360deg); /* Rotate icon on hover */
+  }
+  
+  .feature-inner h4 {
+    margin-bottom: 15px;
+    margin-top: 20px;
+    color: #f89d35;
+    font-size: 2rem; /* Increased font size */
+    font-weight: bold;
+    letter-spacing: 1.5px; /* Slightly increased letter spacing */
+    text-transform: uppercase;
+  }
+  
+  .feature-inner p {
+    color: #e0e0e0;
+    font-size: 1.rem; /* Slightly larger text */
+    line-height: 1.8; /* Increased line height for readability */
+  }
+  
+  /* Animations */
+  @keyframes slideInUp {
+    0% {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .bg-counter {
+    background: url("../images/bg/bg-3.jpg") no-repeat;
+    background-size: cover;
   }
   
 
-
-.feature-inner {
-  background: #fff;
-  padding: 30px;
-  border: 1px solid rgba(0, 0, 0, 0.03);
-}
-.feature-inner i {
-  font-size: 50px;
-  color: #f89d35;
-}
-.feature-inner h4 {
-  margin-bottom: 0px;
-  margin-top: 10px;
-}
-.feature-inner p {
-  color: #8c8c8c;
-}
-
-.bg-counter {
-  background: url("../images/bg/bg-3.jpg") no-repeat;
-  background-size: cover;
-}
 
 .counter {
   background: #f7f9f3;
@@ -2180,7 +2303,15 @@ ul.list-styled {
   font-size: 1.5rem;
   margin-top: 20px;
   line-height: 1.4;
+  color: white;
 }
+.cta-text {
+  color: white; /* Changes the text color to white */
+  font-size: 1.5rem; /* Adjust the size if necessary */
+  margin-bottom: 1.5rem; /* Equivalent to mb-6 */
+  margin-top: 1rem; /* Equivalent to mt-4 */
+}
+
 
 /* Section Title Styling */
 /* Container for section title */
