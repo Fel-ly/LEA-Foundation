@@ -1120,7 +1120,9 @@ ul.list-styled {
     font-size: 18px;
   }
 }
-
+.mb-6{
+  color:#f89d35;
+}
 .mb-50 {
   margin-bottom: 50px;
 }
@@ -1138,13 +1140,18 @@ ul.list-styled {
   margin-bottom: 1rem;
 }
 .mb-3{
-  color: orange;
+  color: #f89d35;
+}
+.text-lg {
+  color:#f89d35;
 }
 .about-item-content p {
   margin-bottom: 1.5rem;
   padding-left: 2rem;
 }
-
+.mt-6 {
+  color:#f89d35;
+}
 /* Image Handling */
 .about-item-img {
   position: relative;
