@@ -38,6 +38,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+<!-- Slick Carousel CSS -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+
+<!-- jQuery (necessary for Slick Carousel) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Slick Carousel JS -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 
 </head>
@@ -328,45 +336,54 @@
 </section>
 <!-- Section About Start -->
 <section class="recent-projects-section">
-	<div class="container">
-		<div class="section-header">
-		  <div class="title-box">
-			<div class="section-title">
-			  <span class="highlight-text">Latest Events</span>
-			  <h2 class="main-title">Our Recent Projects</h2>
-			</div>
-		  </div>
-		</div>
-	
-	  <div class="projects-columns">
-		<div class="project-item">
-		  <img src="images/about/fun.JPG" class="project-image" alt="Fun at Event">
-		  <div class="project-description">
-			<h3 class="project-title"><a href="cause-single.html">Immersion and Inclusivity</a></h3>
-			<p class="project-text">In our first project, we connected with learners at MSDP who were new to computers. We began by introducing them to the basics, ensuring they felt comfortable and confident before advancing to more complex skills. This foundational support set the stage for their future growth in technology.</p>
-		  </div>
-		</div>
-  
-		<div class="project-item">
-		  <img src="images/about/LEA-2.jpg" class="project-image" alt="Laptop Initiative">
-		  <div class="project-description">
-			<h3 class="project-title"><a href="cause-single.html">Laptop Initiative For Learners</a></h3>
-			<p class="project-text">Our current project focuses on sourcing laptops for our learners. While our dedicated tutors provide laptops, we are actively seeking additional funding to ensure every student has access to the tools they need. Your support can help us bridge the digital divide and enhance learning opportunities for all.</p>
-		  </div>
-		</div>
-  
-		<div class="project-item">
-		  <img src="images/about/LEA-28.jpg" class="project-image" alt="Build Websites">
-		  <div class="project-description">
-			<h3 class="project-title"><a href="cause-single.html">Build Websites</a></h3>
-			<p class="project-text">Once our learners were comfortable with basic computer skills, we guided them in creating their own simple websites. Each group designed a site related to their courses, applying their newfound skills in a practical and creative way. This hands-on project fostered confidence and demonstrated the power of technology.</p>
-		  </div>
-		</div>
-	  </div>
-	</div>
+    <div class="container">
+        <div class="section-header">
+            <div class="title-box">
+                <div class="section-title">
+                    <span class="highlight-text">Latest Events</span>
+                    <h2 class="main-title">Our Recent Projects</h2>
+                </div>
+            </div>
+        </div>
+    
+        <div class="projects-columns">
+            <div class="project-item">
+                <img src="images/about/fun.JPG" class="project-image" alt="Fun at Event">
+                <div class="project-description">
+                    <h3 class="project-title"><a href="cause-single.html">Immersion and Inclusivity</a></h3>
+                    <p class="project-text">In our first project, we connected with learners at MSDP who were new to computers. We began by introducing them to the basics, ensuring they felt comfortable and confident before advancing to more complex skills. This foundational support set the stage for their future growth in technology.</p>
+                </div>
+            </div>
 
+            <div class="project-item">
+                <img src="images/about/LEA-2.jpg" class="project-image" alt="Laptop Initiative">
+                <div class="project-description">
+                    <h3 class="project-title"><a href="cause-single.html">Laptop Initiative For Learners</a></h3>
+                    <p class="project-text">Our current project focuses on sourcing laptops for our learners. While our dedicated tutors provide laptops, we are actively seeking additional funding to ensure every student has access to the tools they need. Your support can help us bridge the digital divide and enhance learning opportunities for all.</p>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <img src="images/about/LEA-28.jpg" class="project-image" alt="Build Websites">
+                <div class="project-description">
+                    <h3 class="project-title"><a href="cause-single.html">Build Websites</a></h3>
+                    <p class="project-text">Once our learners were comfortable with basic computer skills, we guided them in creating their own simple websites. Each group designed a site related to their courses, applying their newfound skills in a practical and creative way. This hands-on project fostered confidence and demonstrated the power of technology.</p>
+                </div>
+            </div>
+			<div class="project-item">
+                <img src="images/about/LEA-28.jpg" class="project-image" alt="Build Websites">
+                <div class="project-description">
+                    <h3 class="project-title"><a href="cause-single.html">Build Websites</a></h3>
+                    <p class="project-text">Once our learners were comfortable with basic computer skills, we guided them in creating their own simple websites. Each group designed a site related to their courses, applying their newfound skills in a practical and creative way. This hands-on project fostered confidence and demonstrated the power of technology.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
 	
-  </section>
+</section>
+
   
 <!-- Section About End -->
 <div class="cta-block section">
@@ -604,6 +621,35 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&callback=initMap"></script>    
     
     <script src="js/script.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		  $('.projects-columns').slick({
+			dots: true,
+			infinite: true,
+			speed: 500,
+			slidesToShow: 3,
+			slidesToScroll: 1,
+			arrows: false, // Hide arrows if only dots are desired
+			responsive: [
+			  {
+				breakpoint: 1024,
+				settings: {
+				  slidesToShow: 2,
+				  slidesToScroll: 1
+				}
+			  },
+			  {
+				breakpoint: 768,
+				settings: {
+				  slidesToShow: 1,
+				  slidesToScroll: 1
+				}
+			  }
+			]
+		  });
+		});
+	  </script>
+	  
 
   </body>
   

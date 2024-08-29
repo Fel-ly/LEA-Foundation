@@ -219,21 +219,19 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
   background-image: linear-gradient(145deg, rgba(19, 177, 205, 0.95) 0%, rgba(152, 119, 234, 0.95) 100%);
   background-repeat: repeat-x;
 
-}/* General section padding */
-.recent-projects-section {
-  padding: 100px 0;
-  background: linear-gradient(135deg, rgba(131, 59, 225, 0.1) 0%, rgba(150, 130, 182, 0.1) 100%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
-
+/* General section padding */
+.recent-projects-section {
+  padding: 60px 0;
+  background: linear-gradient(135deg, rgba(131, 59, 225, 0.1) 0%, rgba(150, 130, 182, 0.1) 100%);
+  position: relative;
+}
 
 /* Container settings */
 .container {
-  width: 100%;
   max-width: 1200px;
-  padding: 0 1rem;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 /* Section header styling */
@@ -241,7 +239,7 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
   width: 100%;
   text-align: center;
   position: relative;
-  margin-bottom: 60px; /* Increased space below the title box */
+  margin-bottom: 40px; /* Increased space below the title box */
 }
 
 /* Title box with animated background effect */
@@ -283,7 +281,7 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
   left: 50%;
   width: 50%;
   height: 4px;
-  background-color: rgba(109, 120, 13, 0.1); /* Line color */
+  background-color:#f89d35; /* Line color */
   border-radius: 2px;
   transform: translateX(-50%);
 }
@@ -326,47 +324,32 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
   }
 }
 
-@keyframes lineExpand {
-  0% {
-    width: 0;
-    opacity: 0;
-  }
-  50% {
-    width: 80%;
-    opacity: 1;
-  }
-  100% {
-    width: 0;
-    opacity: 0;
-  }
-}
-
 /* Flex container for projects */
 .projects-columns {
   display: flex;
-  flex-wrap: wrap; /* Allow items to wrap to next line */
-  justify-content: center; /* Center items horizontally */
-  gap: 1rem; /* Space between items */
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 30px;
+  padding: 20px 0;
+  scroll-snap-type: x mandatory;
 }
 
 /* Individual project item styling */
 .project-item {
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 calc(33.333% - 1rem); /* Adjust width for wrapping */
-  max-width: calc(33.333% - 1rem); /* Ensure proper sizing */
-  box-sizing: border-box;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  flex: 0 0 auto;
+  width: 300px; /* Adjust based on your design */
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  background-color: #fff;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  scroll-snap-align: center;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Hover effect for project items */
 .project-item:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* Slide-in effect for project items */
@@ -388,12 +371,14 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
 /* Image styling */
 .project-image {
   width: 100%;
-  height: auto;
+  height: 200px;
+  object-fit: cover;
 }
 
 /* Description styling */
 .project-description {
-  padding: 1rem;
+  padding: 20px;
+  text-align: center;
 }
 
 .project-description p {
@@ -438,22 +423,65 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
   }
 }
 
+/* Navigation Dots */
+.slick-dots {
+  position: absolute;
+  bottom: -40px; /* Adjust based on design */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-/* Animation for the Decorative Underline */
-@keyframes underlinePulse {
-  0% {
-    transform: scaleX(0);
-    opacity: 0;
+.slick-dots li {
+  width: 10px;
+  height: 10px;
+  color: #f89d35;
+}
+
+.slick-dots li button {
+  background: #FF673AB7;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+
+.slick-dots .slick-active button {
+  opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .projects-columns {
+    flex-direction: column;
+    align-items: center;
   }
-  50% {
-    transform: scaleX(1);
-    opacity: 1;
+
+  .project-item {
+    width: 90%;
   }
-  100% {
-    transform: scaleX(0);
-    opacity: 0;
+
+  .slick-dots {
+    bottom: -30px;
   }
 }
+
+@media (min-width: 1024px) {
+  .slick-dots {
+    display: flex;
+  }
+}
+
 
 /* Content Title Styling */
 .content-title {

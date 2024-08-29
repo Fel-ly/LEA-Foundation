@@ -235,6 +235,45 @@ document.addEventListener('DOMContentLoaded', () => {
     showSlide(currentIndex);
   }, 5000); // Change slide every 5 seconds
 });
+$(document).ready(function(){
+  $('.projects-carousel').slick({
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: true,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 3000
+  });
+});
+$(document).ready(function(){
+  $('.projects-columns').slick({
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 5, // Adjust as needed
+    slidesToScroll: 1,
+    arrows: true, // Hide arrows if not needed
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  });
+});
+      
+  
 
 
 
