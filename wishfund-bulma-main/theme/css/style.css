@@ -1254,7 +1254,7 @@ ul.list-styled {
 }
 .video .video-block video {
   width: 900px;        /* Make video width responsive to container */
-  max-height: 1000px;  /* Limit video height */
+  max-height: 400px;  /* Limit video height */
   object-fit: cover;  /* Maintain aspect ratio */
 }
 @media (max-width: 575px) {
