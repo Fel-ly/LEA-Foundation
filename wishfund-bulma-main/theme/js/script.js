@@ -11,13 +11,17 @@
     });
   }
 
-  $(".videoplay").modalVideo();
-  $(".portfolio-single-slider").slick({
-    infinite: true,
-    arrows: false,
-    autoplay: true,
-    autoplaySpeed: 2000,
-  });
+  // Remove or comment out the modalVideo initialization
+// $(".videoplay").modalVideo();
+
+// If you need to retain the slick slider functionality, keep this part
+$(".portfolio-single-slider").slick({
+  infinite: true,
+  arrows: false,
+  autoplay: true,
+  autoplaySpeed: 2000,
+});
+
 
   $(".clients-logo").slick({
     infinite: true,
@@ -231,5 +235,6 @@ document.addEventListener('DOMContentLoaded', () => {
     showSlide(currentIndex);
   }, 5000); // Change slide every 5 seconds
 });
+
 
 

@@ -1201,7 +1201,7 @@ ul.list-styled {
   content: "";
   left: 0px;
   top: 0px;
-  background: url("../images/bg/image-5.jpg") no-repeat;
+  background: url("../images/lv_0_20240825232331.mp4") no-repeat;
   background-size: cover;
   width: 60%;
   height: 100%;
@@ -1212,19 +1212,22 @@ ul.list-styled {
 }
 .video .video-block .img-block {
   position: relative;
-  box-shadow: 0px 0px 70px 0px rgba(0, 42, 106, 0.1);
+  box-shadow: 0px 0px 70px 0px rgba(201, 234, 13, 0.1);
+}
+.video .video-block video {
+  width: 900px;        /* Make video width responsive to container */
+  max-height: 1000px;  /* Limit video height */
+  object-fit: cover;  /* Maintain aspect ratio */
 }
 @media (max-width: 575px) {
-  .video .video-block .img-block img {
-    height: 300px;
-    -o-object-fit: cover;
-       object-fit: cover;
+  .video .video-block video {
+    max-height: 250px; /* Further reduce height on small screens */
   }
 }
 .video .video-block .videoplay {
   display: inline-block;
   background: #fff;
-  color: #863bae;
+  color: #070707;
   width: 80px;
   height: 80px;
   border-radius: 100%;
@@ -1236,9 +1239,8 @@ ul.list-styled {
   left: 0px;
   margin: auto;
 }
-.video .video-block .videoplay:hover {
-  cursor: pointer;
-}
+
+
 
 .confirmation-content i,
 .error-content i {
