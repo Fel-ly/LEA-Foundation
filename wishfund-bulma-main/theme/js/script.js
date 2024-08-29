@@ -272,7 +272,36 @@ $(document).ready(function(){
     ]
   });
 });
-      
+document.addEventListener("DOMContentLoaded", function() {
+  const timelineItems = document.querySelectorAll('.timeline-item');
+
+  timelineItems.forEach((item, index) => {
+      if (index > 0) {
+          const prevItem = timelineItems[index - 1];
+
+          const line = document.createElement('div');
+          line.classList.add('timeline-line');
+
+          document.querySelector('.timeline').appendChild(line);
+
+          const itemRect = item.getBoundingClientRect();
+          const prevItemRect = prevItem.getBoundingClientRect();
+
+          const lineWidth = itemRect.left - prevItemRect.right;
+          line.style.width = `${lineWidth}px`;
+
+          const lineHeight = itemRect.top - prevItemRect.bottom;
+          line.style.height = `${lineHeight}px`;
+
+          line.style.position = 'absolute';
+          line.style.top = `${prevItemRect.bottom}px`;
+          line.style.left = `${prevItemRect.right}px`;
+
+          line.style.backgroundColor = '#f89d35';
+      }
+  });
+});
+
   
 
 

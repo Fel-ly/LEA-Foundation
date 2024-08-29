@@ -10,7 +10,7 @@ body {
   -webkit-font-smoothing: antialiased;
   font-size: 16px;
   color: #fff;
-  background-color: #735da5;
+  background-color: #2c003e;
 }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
@@ -2165,7 +2165,99 @@ ul.list-styled {
   100% {
     transform: translateX(100%) skewX(-20deg);
   }
+}/* Section Styling */
+.section.empowerment-steps {
+  padding: 60px 0;
+  background-color: #2c003e; /* Dark Purple background */
+  color: #ffffff;
 }
+
+.section-title h2 {
+  font-size: 32px;
+  color: #f89d35; /* Orange title */
+}
+
+.section-title p {
+  font-size: 16px;
+  color: #d3b8e7; /* Lilac subtitle */
+  margin-top: 10px;
+}
+
+/* Timeline Container */
+.timeline {
+  position: relative;
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.timeline-item {
+  position: relative;
+  text-align: center;
+  width: 23%; /* Adjust this width based on the number of items */
+}
+
+.timeline-content {
+  background-color: #4b0082; /* Another shade of purple */
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.circle {
+  width: 40px;
+  height: 40px;
+  background-color: #f89d35; /* Orange circle */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #ffffff;
+  margin: 0 auto 15px;
+}
+
+.timeline-item h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.timeline-item p {
+  font-size: 14px;
+  color: #d3b8e7; /* Lilac text */
+}
+
+/* Line between items */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #f89d35; /* Orange line */
+  z-index: 0;
+}
+
+/* Hiding the line outside of the items */
+.timeline-item:first-child::before {
+  content: none;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -50%;
+  width: 100%;
+  height: 4px;
+  background-color: #f89d35; /* Orange line */
+  z-index: -1;
+}
+
 
 
 /* Blog Items Styling */
