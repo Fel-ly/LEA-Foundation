@@ -301,7 +301,13 @@ document.addEventListener("DOMContentLoaded", function() {
       }
   });
 });
+ // Example function to change image source
+ function changeImage(imageUrl) {
+  document.getElementById('about-image').src = imageUrl;
+}
 
+// Example usage (you can call this function based on user interaction)
+changeImage('images/about/LEA-18.jpg');
   
 
 
