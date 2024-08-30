@@ -412,6 +412,7 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
 
 .project-text {
   margin: 0;
+  font-size: 0.8rem;
 }
 
 /* New class for animation */
