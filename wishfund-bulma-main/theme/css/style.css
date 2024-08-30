@@ -704,7 +704,7 @@ a:focus {
 }
 
 .info-intro p {
-  font-size: 1.2rem; /* Larger font size for the description */
+  font-size: o.7rem; /* Larger font size for the description */
   color: #ffffff; /* Text color */
   line-height: 1.8; /* Improved readability */
 }
@@ -733,6 +733,7 @@ a:focus {
   max-height: 400px; /* Limit height to avoid overly tall items */
 }
 
+
 .info-item:hover {
   transform: scale(1.05); /* Slight zoom effect on hover */
   box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6); /* Enhanced shadow on hover */
@@ -756,7 +757,7 @@ a:focus {
 .info-content {
   color: #ffffff; /* White text for contrast */
   line-height: 1.8; /* Improved readability */
-  font-size: 1rem; /* Standard font size for content */
+  font-size: 0.8rem; /* Standard font size for content */
 }
 
 /* Separator lines styling */
@@ -1814,17 +1815,19 @@ ul.list-styled {
     left: 0;
     right: 0;
     top: 0;
+    bottom: 0;
     width: 100%;
     height: 100%; /* Reduced the height for a subtler effect */
-    background: url("../images/blog/Funday-66.jpg") no-repeat;
+    background: url("../images/blog/Funday-66.jpg") no-repeat center center;
     background-size: cover;
     background-position: center;
-    opacity: 0.; /* Subtle opacity */
+    background-attachment: fixed;
+    opacity: 0.5; /* Subtle opacity */
     transform: scale(1.05); /* Slightly reduced scale */
   }
   
   .feature-inner {
-    background: black; /* Slightly transparent black background */
+    background: white; /* Slightly transparent black background */
     padding: 30px;
     border-radius: 10px; /* Smooth rounded corners */
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4); /* Soft shadow */
@@ -1860,8 +1863,8 @@ ul.list-styled {
   }
   
   .feature-inner p {
-    color: #e0e0e0;
-    font-size: 1.rem; /* Slightly larger text */
+    color: black;
+    font-size: 0.8rem; /* Slightly larger text */
     line-height: 1.8; /* Increased line height for readability */
   }
   
