@@ -307,8 +307,45 @@ document.addEventListener("DOMContentLoaded", function() {
 }
 
 // Example usage (you can call this function based on user interaction)
-changeImage('images/about/LEA-18.jpg');
-  
+document.addEventListener("DOMContentLoaded", function() {
+  // Slider functionality
+  const slides = document.querySelectorAll('.slide'); // Ensure these elements exist
+  let currentSlide = 0;
 
+  function nextSlide() {
+    if (slides.length === 0) return; // Exit if no slides
 
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }
 
+  // Initialize slide show
+  if (slides.length > 0) {
+    slides[0].classList.add('active'); // Show the first slide
+    setInterval(nextSlide, 5000); // Change slide every 5 seconds
+  } else {
+    console.error("No slides found.");
+  }
+
+  // Message functionality
+  const messages = [
+    "Coding Dreams Into Reality",
+    "Empowering the Future with Technology",
+    "Building a Technological Tomorrow"
+  ];
+
+  let currentIndex = 0;
+  const messageElement = document.getElementById('slider-message');
+
+  if (messageElement) {
+    function changeMessage() {
+      currentIndex = (currentIndex + 1) % messages.length;
+      messageElement.textContent = messages[currentIndex];
+    }
+
+    setInterval(changeMessage, 4000); // Change message every 4 seconds
+  } else {
+    console.error("Message element not found.");
+  }
+});
