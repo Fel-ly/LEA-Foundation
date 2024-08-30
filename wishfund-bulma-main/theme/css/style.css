@@ -1299,7 +1299,9 @@ ul.list-styled {
 .bg-2 {
   background: url("../images/bg/LEA-13.jpg");
   background-size: cover;
-}/* Slider section styling */
+}
+
+/* Slider section styling */
 .slider {
   position: relative;
   overflow: hidden;
@@ -1351,61 +1353,60 @@ ul.list-styled {
   }
 }
 
-/* Animated title styling */
-.animated-title {
-  font-size: 3rem;
+/* Main title styling */
+.main-title {
+  font-size: 4rem; /* Larger font for the main title */
   line-height: 1.2;
+  backdrop-filter: blur(10px); /* Stronger blur for a more pronounced glass effect */
+
   font-weight: bold;
   letter-spacing: 2px;
-  color: #fff;
+  color: #ffffff;
   position: relative;
-  z-index: 2; /* Ensure title is above the background */
+  z-index: 2;
   text-align: center;
-}
-
-/* Animation for each letter */
-.animated-title span {
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1s forwards;
-}
-
-.animated-title span:nth-child(odd) {
-  animation-delay: 0.1s;
-}
-
-.animated-title span:nth-child(even) {
-  animation-delay: 0.2s;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  margin: 0 auto;
+  display: block;
+  padding: 20px 30px;
+  background: rgba(44, 0, 62, 0.6); /* Semi-transparent background color */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Slightly lighter shadow */
 }
 
 
+/* Subtitle styling with icon */
+.sub-title {
+  font-size: 1.2rem; /* Smaller font size for the subtitle */
+  line-height: 1.2;
+  background: rgba(255, 255, 255, 0.1); /* Subtle background for text */
 
-
-.subtext {
-  font-size: 0.7rem;
-  max-width: 600px;
-  margin: 20px auto;
+  font-weight: normal;
+  letter-spacing: 1px;
   color: #f89d35;
-  line-height: 1.5;
   position: relative;
-  z-index: 1;
-  background: rgba(0, 0, 0, 1); /* Subtle background for text clarity */
-  padding: 15px 25px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  text-align: center;
+  margin: 10px auto; /* Spacing between titles */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.1); /* Subtle background for text */
+  border-radius: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
+
+/* Icon styling */
+.sub-title .icon {
+  margin-right: 10px; /* Space between icon and text */
+  color: #f89d35; /* Color for the icon */
+  font-size: 1.5rem; /* Size of the icon */
+}
+
+
+
+
 
 /* Responsive Design */
 @media (max-width: 1024px) {
