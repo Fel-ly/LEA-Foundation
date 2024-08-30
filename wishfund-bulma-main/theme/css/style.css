@@ -2157,7 +2157,7 @@ ul.list-styled {
   max-width: 100%;
   margin: 0 auto 60px auto;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.1);
+  background: white;
   border-radius: 4px;
   box-sizing: border-box;
   animation: fadeIn 1.5s ease-in-out; /* Smooth fade-in animation */
@@ -2172,7 +2172,7 @@ ul.list-styled {
 .gallery .section-title .content-title {
   font-size: 1.0rem; /* Increased font size */
   font-weight: 700;
-  color: white; /* Change title text color to white */
+  color: black; /* Change title text color to white */
   position: relative;
   display: inline-block;
   padding-bottom: 15px;
