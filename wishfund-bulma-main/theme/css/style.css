@@ -695,7 +695,7 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
 .project-overlay i {
   font-size: 30px; /* Smaller icon size */
   margin-bottom: 10px;
-  color: #fff; /* White color for the icon */
+  color: #f89d35; /* White color for the icon */
   transition: color 0.3s ease;
 }
 
