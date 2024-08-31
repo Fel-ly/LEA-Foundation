@@ -522,7 +522,7 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
   font-family: 'Roboto', sans-serif;
   font-size: 1.1rem;
   line-height: 1.8;
-  color: #555;
+  color: #000;
   margin-top: 1rem;
   animation: fadeInUp 1.2s ease-out forwards;
   opacity: 0;
@@ -1108,7 +1108,7 @@ ul.list-styled {
   }
 }
 #navbar .navbar-link:hover, #navbar .navbar-link:focus {
-  color: orange;
+  color: #f39c12;
 }
 #navbar .btn:hover {
   color: #fff;
@@ -1184,8 +1184,8 @@ ul.list-styled {
 }
 /* Style for social media icons */
 .social-icon i {
-  color: orange; /* Change to the desired shade of orange */
-  font-size: 24px; /* Adjust size as needed */
+  color:#f39c12; /* Change to the desired shade of orange */
+  font-size: 18px; /* Adjust size as needed */
   transition: color 0.3s ease; /* Smooth color transition on hover */
 }
 
@@ -1307,13 +1307,11 @@ ul.list-styled {
   overflow: hidden;
   padding: 250px 0 10px;
   color: #fff;
-  background-size: cover;
-  background-attachment: fixed; /* Fixes background */
+  background-attachment: fixed;
   background-position: center;
   min-height: 70vh;
   width: 100%;
-  background-color: rgba(44, 0, 62, 0.8);
-  z-index: 1; /* Ensure it's above other content */
+  z-index: 1;
 }
 
 /* Slider background overlay */
@@ -1324,103 +1322,147 @@ ul.list-styled {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(44, 0, 62, 0.8); /* Adjusted overlay for better text visibility */
-  z-index: -1; /* Ensure the overlay is behind the content */
-  animation: bgChange 12s infinite ease-in-out; /* Background image change with smooth transition */
+  background: rgba(44, 0, 62, 0.4); /* Darkened overlay for better text visibility */
+  z-index: 1;
+  pointer-events: none;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Background image container */
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  animation: backgroundChange 15s infinite ease-in-out;
+  filter: brightness(50%); /* Adjust brightness to darken images */
 }
 
 /* Keyframes for background image transition */
-@keyframes bgChange {
+@keyframes backgroundChange {
   0% {
-    background: linear-gradient(rgba(44, 0, 62, 0.4), rgba(44, 0, 62, 0.4)),
-      url("../images/bg/LEANEW.jpg") no-repeat center center;
-    background-size: cover;
+    background-image: url("../images/bg/LEANEW.jpg");
   }
   33% {
-    background: linear-gradient(rgba(44, 0, 62, 0.4), rgba(44, 0, 62, 0.4)),
-      url("../images/bg/LEA-15.jpg") no-repeat center center;
-    background-size: cover;
+    background-image: url("../images/bg/LEA-15.jpg");
   }
   66% {
-    background: linear-gradient(rgba(44, 0, 62, 0.4), rgba(44, 0, 62, 0.4)),
-      url("../images/bg/LEA-17.jpg") no-repeat center center;
-    background-size: cover;
+    background-image: url("../images/bg/LEA-17.jpg");
   }
   100% {
-    background: linear-gradient(rgba(44, 0, 62, 0.4), rgba(44, 0, 62, 0.4)),
-      url("../images/bg/LEA-20.jpg") no-repeat center center;
-    background-size: cover;
+    background-image: url("../images/bg/LEA-20.jpg");
   }
 }
+
+/* Combined title and subtitle container with a blurred background */
+.title-container {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  margin: 0 auto;
+  padding: 20px 40px;
+  position: relative;
+  display: inline-block;
+  background: rgba(44, 0, 62, 1.5); /* Increased opacity for more visibility */
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 1.5); /* Slightly darker shadow for better contrast */
+  backdrop-filter: blur(20px); /* Increased blur effect */
+  z-index: 2;
+}
+
 
 /* Main title styling */
 .main-title {
-  font-size: 4rem; /* Larger font for the main title */
-  line-height: 1.2;
-  backdrop-filter: blur(10px); /* Stronger blur for a more pronounced glass effect */
-
+  font-size: 4rem;
   font-weight: bold;
   letter-spacing: 2px;
   color: #ffffff;
-  position: relative;
-  z-index: 2;
-  text-align: center;
   margin: 0 auto;
-  display: block;
-  padding: 20px 30px;
-  background: rgba(44, 0, 62, 0.6); /* Semi-transparent background color */
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Slightly lighter shadow */
-}
-
-
-/* Subtitle styling with icon */
-.sub-title {
-  font-size: 1.2rem; /* Smaller font size for the subtitle */
-  line-height: 1.2;
-  background: rgba(255, 255, 255, 0.1); /* Subtle background for text */
-
-  font-weight: normal;
-  letter-spacing: 1px;
-  color: #f89d35;
   position: relative;
   z-index: 2;
-  text-align: center;
-  margin: 10px auto; /* Spacing between titles */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 15px 20px;
-  background: rgba(255, 255, 255, 0.1); /* Subtle background for text */
-  border-radius: 10px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  animation: fadeInUp 2s ease-in-out 1s forwards;
+  text-transform: uppercase;
+  
+  /* Gradient Effect */
+  background: linear-gradient(90deg, #f89d35 100%, #ffcc80 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  /* Text Shadow */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+
+  /* Pseudo-element for decorative underline */
+  &::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 3px;
+    background: linear-gradient(90deg, #f89d35 100%, #ffcc80 100%);
+    animation: underlineExpand 2s ease-in-out forwards;
+  }
 }
 
-/* Icon styling */
-.sub-title .icon {
-  margin-right: 10px; /* Space between icon and text */
-  color: #f89d35; /* Color for the icon */
-  font-size: 1.5rem; /* Size of the icon */
+/* Subtitle styling - toned down */
+.sub-title {
+  font-size: 1.3rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  color: #fff; /* Subtle gold color */
+  margin: 10px auto;
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  animation: fadeInUp 2s ease-in-out 1.5s forwards;
+  font-family: 'Roboto', sans-serif;
+  padding: 5px 0;
+  text-transform: uppercase;
+
+  /* Subtle Glow Effect */
+  text-shadow: 1px 1px 3px rgba(255, 215, 0, 0.5);
 }
 
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-
-
+@keyframes underlineExpand {
+  from {
+    width: 0;
+  }
+  to {
+    width: 60%;
+  }
+}
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .animated-title {
-    font-weight: bolder;
-    font-size: 3rem; /* Adjusted for responsiveness */
+  .title-container {
+    padding: 15px 30px;
   }
 
-  .subtext {
-    font-size: 0.7em; /* Adjusted for responsiveness */
+  .main-title {
+    font-size: 3rem;
+  }
+
+  .sub-title {
+    font-size: 1.2rem;
   }
 }
-
-
 
 .mb-51{
   color:white;
@@ -2615,8 +2657,149 @@ ul.list-styled {
   .intro-item p {
     font-size: 10px;
   }
+}/* Container Styling */
+.intro-container {
+  position: relative;
+  overflow: hidden;
+  padding: 40px 15px;
+  margin-right: 8px;
+  margin-left: 8px;
+  margin-bottom: 60px;
+  background: #000; /* Dark background for a modern feel */
+  color: #fff; /* Light text color for contrast */
+  border-radius: 10px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+}
+.icon-container {
+  font-size: 3rem; /* Adjust size as needed */
+  color: #FF673AB7; /* Color for icons */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Space between icons */
 }
 
+
+/* Background Styling */
+.intro-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #4a00e0, #8e2de2); /* Gradient background */
+  filter: blur(8px);
+  z-index: -1;
+}
+
+/* Overlay for Darker Tint */
+.intro-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* Dark overlay for better text contrast */
+}
+
+/* Content Styling */
+.intro-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* Space between visual and text */
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+}
+
+/* Visual Box */
+.intro-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px; /* Spacing below visual */
+}
+
+.visual-box {
+  font-size: 4rem;
+  color: #ffffff;
+  background: #f39c12; /* Highlight color */
+  padding: 20px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+
+.visual-box:hover {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Headline Styling */
+.headline {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffffff; /* White for high contrast */
+  background: linear-gradient(90deg, #ff6f61, #ffcc00); /* Gradient text effect */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+  animation: slideIn 1.5s ease-out;
+}
+
+/* Subheadline Styling */
+.subheadline {
+  font-size: 0.8rem;
+  color:white; /* Light gray for readability */
+  max-width: 700px;
+  line-height: 1.6;
+  margin: 0 auto;
+  animation: fadeInUp 1.5s ease-out 0.5s;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+      opacity: 0;
+      transform: translateY(-30px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .intro-content {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .headline {
+      font-size: 2rem;
+  }
+
+  .subheadline {
+      font-size: 1rem;
+  }
+
+  .visual-box {
+      font-size: 3rem;
+  }
+}
 
 /*=================================================================
   Latest Posts
