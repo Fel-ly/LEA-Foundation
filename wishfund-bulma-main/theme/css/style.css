@@ -1905,6 +1905,154 @@ ul.list-styled {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
   border: 1px solid transparent;
 }
+/*volunteer*/
+/* Volunteer Section Styling */
+.volunteer-section {
+  padding: 60px 20px;
+  background: #2c003e; /* Dark background for contrast */
+  color: #f5f5f5; /* Light text color */
+}
+
+/* Container for content */
+.volunteer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Volunteer Info Styling */
+
+
+.icon-container {
+  margin: 20px 0;
+}
+
+.icon-container i {
+  font-size: 3rem; /* Adjust icon size */
+  color: #F89D35; /* Accent color for the icon */
+  display: inline-block;
+}
+
+.text-white {
+  color: #f5f5f5; /* White color for text */
+}
+
+.animate-slide {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slide-up 1s forwards;
+}
+
+@keyframes slide-up {
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.volunteer-info {
+  flex: 1;
+  max-width: 48%;
+}
+
+.section-intro {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #F89D35; /* Accent color */
+  margin-bottom: 20px;
+}
+
+.section-description {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.volunteer-benefits {
+  background: #000; /* Darker background for contrast */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.benefits-title {
+  font-size: 1.2rem;
+  color: #F89D35; /* Accent color */
+  margin-bottom: 10px;
+}
+
+.benefits-list {
+  font-size: 0.8rem;
+  color: #f5f5f5; /* Light text color */
+}
+
+.benefits-list li {
+  margin-bottom: 10px;
+
+}
+.benefits-list li strong {
+  color: #f5f5f5; /* White color for strong elements */
+}
+/* Volunteer Form Styling */
+.volunteer-form-container {
+  flex: 1;
+  max-width: 48%;
+}
+
+.form-title {
+  font-size: 1.2rem;
+  color: #F89D35; /* Accent color */
+  display: block;
+  margin-bottom: 20px;
+}
+
+.form-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.volunteer-form .form-group {
+  margin-bottom: 20px;
+}
+
+.input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid #f5f5f5; /* Light border color */
+  background: #333; /* Dark background for input fields */
+  color: #f5f5f5; /* Light text color */
+  font-size: 0.8rem;
+}
+
+.input::placeholder {
+  color: #aaa; /* Light gray placeholder text */
+}
+
+.btn-main-2 {
+  background: #F89D35; /* Accent color */
+  color: #fff; /* White text color */
+  padding: 12px 24px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  transition: background 0.3s ease;
+  border: none; /* Remove default border */
+  cursor: pointer; /* Pointer cursor for button */
+}
+
+.btn-main-2:hover {
+  background: #e07a33; /* Slightly darker shade on hover */
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+  .volunteer-info,
+  .volunteer-form-container {
+      max-width: 100%;
+  }
+}
 
 .volunteer {
   position: relative;
