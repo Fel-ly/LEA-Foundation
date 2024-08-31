@@ -3511,7 +3511,7 @@ body {
 
 .timeline-content {
   background-color: #4b0082; /* Another shade of purple */
-  padding: 20px;
+  padding: 0px;
   border-radius: 10px;
   position: relative;
   z-index: 1;
@@ -3532,11 +3532,13 @@ body {
 
 .timeline-item h3 {
   font-size: 18px;
-  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
   color: #ffffff;
 }
 
 .timeline-item p {
+display: flex;
   font-size: 14px;
   color: #d3b8e7; /* Lilac text */
 }
