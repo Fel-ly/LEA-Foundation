@@ -315,6 +315,7 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
   margin-bottom: 0.5rem;
 }
 
+
 /* Keyframes for border pulse animation */
 @keyframes borderPulse {
   0% {
@@ -603,10 +604,239 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
 .text-lg {
   font-size: 3.25rem;
   line-height: 1.2;
+  color: #FFf; /* Accent color */
 }
+
+.block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.icon-container {
+  margin: 20px 0; /* Adjust spacing as needed */
+}
+
+.icon-container i {
+  font-size: 3rem; /* Adjust icon size */
+  color: #f89d35; /* Accent color */
+}
+
+      
+/* Animation for text sliding up */
+@keyframes slideUp {
+  0% {
+      transform: translateY(20px);
+      opacity: 0;
+  }
+  100% {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+.animate-text {
+  animation: slideUp 1s ease-out;
+}
+/*projects*/
+/* Unique Project Section Styling */
+.section.projects {
+  padding: 80px 20px;
+  background: #2c003e; /* Dark background for contrast */
+  color: #f5f5f5; /* Light text color */
+}
+
+.projects-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Individual Project Card */
+.project {
+  position: relative;
+  width: calc(33.333% - 20px);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  background: #F89D35; /* Accent color background */
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.project-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.project-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff; /* Light text color */
+  opacity: 0;
+  transition: opacity 0.5s ease, background 0.5s ease;
+  width: 100%;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7); /* Dark overlay */
+  border-radius: 10px;
+}
+
+.project-overlay i {
+  font-size: 30px; /* Smaller icon size */
+  margin-bottom: 10px;
+  color: #fff; /* White color for the icon */
+  transition: color 0.3s ease;
+}
+
+.project-overlay p {
+  font-size: 0.8rem; /* Smaller text size */
+  line-height: 1.6;
+  margin: 0;
+}
+
+.project:hover .project-overlay {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.8); /* Darker overlay on hover */
+}
+
+.project:hover .project-image img {
+  transform: scale(1.1);
+}
+
+/* Card Body (Bottom Section) */
+.project-info {
+  padding: 15px;
+  background: #000; /* Black background for the card body */
+  color: #FFF; /* White text color */
+  text-align: center;
+  border-radius: 0 0 15px 15px; /* Rounded bottom corners */
+}
+
+.project-title a {
+  color: #F89D35; /* Accent color for the title */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  font-size: 1.5rem; /* Adjusted size */
+}
+
+.project-title a:hover {
+  color: #fff; /* White on hover */
+}
+
+.project-description {
+  color: #f5f5f5; /* Light gray text color for readability */
+  line-height: 1.6;
+  margin: 10px 0;
+  font-size: 0.8rem; /* Smaller text size */
+}
+
+.project-details {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.project-details p {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 0.8rem; /* Smaller text size */
+}
+
+.project-details ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.project-details ul li {
+  color: #f5f5f5; /* Light gray text color */
+  margin-bottom: 5px;
+  font-size: 0.7rem;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 1200px) {
+  .project {
+      width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .project {
+      width: 100%;
+  }
+}
+
+/* Basic styling for the icon container */
+.icon-container {
+  font-size: 3rem; /* Adjust size as needed */
+  color: #fff; /* Icon color */
+  margin: 20px 0; /* Spacing around icon */
+}
+
+/* Ensure the icon does not animate */
+.icon-container i {
+  transition: none; /* Disable transitions for the icon */
+}
+
 
 .no-spacing {
   letter-spacing: 0px;
+}
+/* Intro Section Styling */
+.intro-section {
+  padding: 60px 20px;
+  background: #000; /* Accent color background */
+  color: #000; /* Black text color */
+  text-align: center;
+}
+
+.intro-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #f89d35;
+}
+
+.intro-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Conclusion Section Styling */
+.conclusion-section {
+  padding: 60px 20px;
+  background: #fff; /* Dark background for contrast */
+  color: #000; /* Light text color */
+  text-align: center;
+}
+
+.conclusion-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #f89d35;
+}
+
+.conclusion-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 800px;
+  color: black;
+  margin: 0 auto;
 }
 
 /* Links */

@@ -383,6 +383,15 @@ document.addEventListener("DOMContentLoaded", function() {
     observer.observe(icon);
   });
 
+// Initialize ScrollReveal
+ScrollReveal().reveal('.project', {
+  origin: 'bottom',
+  distance: '50px',
+  duration: 1000,
+  delay: 200,
+  easing: 'ease-in-out',
+  interval: 200, // Staggered reveal for multiple elements
+});
 
 
 
