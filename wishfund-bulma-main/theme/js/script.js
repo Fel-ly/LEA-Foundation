@@ -392,6 +392,45 @@ ScrollReveal().reveal('.project', {
   easing: 'ease-in-out',
   interval: 200, // Staggered reveal for multiple elements
 });
+document.addEventListener('DOMContentLoaded', function() {
+  function updateCountdown() {
+      const countdownElements = document.querySelectorAll('.countdown');
+      const now = new Date();
+
+      countdownElements.forEach(el => {
+          const eventDate = new Date(el.getAttribute('data-event-date'));
+          const timeDifference = eventDate - now;
+
+          if (timeDifference > 0) {
+              const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+              const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+              const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+              const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+              el.innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+          } else {
+              el.innerText = 'Event Started';
+          }
+      });
+  }
+
+  setInterval(updateCountdown, 1000);
+});
+// js/script.js
+
+document.addEventListener('DOMContentLoaded', function () {
+  const events = document.querySelectorAll('.event-item');
+
+  events.forEach(event => {
+      event.addEventListener('click', () => {
+          // Example: Show an alert with event details
+          const title = event.querySelector('h3').textContent;
+          const date = event.querySelector('p').textContent;
+          alert(`Event: ${title}\nDate: ${date}`);
+      });
+  });
+});
+
 
 
 
