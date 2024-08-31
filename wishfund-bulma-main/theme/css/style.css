@@ -275,11 +275,10 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
   left: 0;
   width: 100%;
   height: 100%;
-  border: 2px solid #b9abb6; /* Slightly lighter border color */
+  border: 1px solid #b9abb6; /* Slightly lighter border color */
   border-radius: 10px; /* Match the border radius of title box */
   box-sizing: border-box;
   z-index: -1;
-  animation: borderPulse 3s infinite; /* Slower pulse for a subtle effect */
 }
 
 /* Line effect added */
@@ -290,7 +289,6 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
   left: 50%;
   width: 50%;
   height: 4px;
-  background-color:#f89d35; /* Line color */
   border-radius: 2px;
   transform: translateX(-50%);
 }
@@ -1388,7 +1386,7 @@ ul.list-styled {
   text-transform: uppercase;
   
   /* Gradient Effect */
-  background: linear-gradient(90deg, #f89d35 100%, #ffcc80 100%);
+  background: linear-gradient(90deg, #f89d35 100%, #f89d35 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   
@@ -1404,7 +1402,7 @@ ul.list-styled {
     transform: translateX(-50%);
     width: 60%;
     height: 3px;
-    background: linear-gradient(90deg, #f89d35 100%, #ffcc80 100%);
+    background: linear-gradient(90deg, #f89d35 100%, #f89d35 100%);
     animation: underlineExpand 2s ease-in-out forwards;
   }
 }
