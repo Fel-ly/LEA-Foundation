@@ -430,6 +430,12 @@ document.addEventListener('DOMContentLoaded', function () {
       });
   });
 });
+document.getElementById('events-timeline').addEventListener('scroll', function() {
+  let timeline = this;
+  if (timeline.scrollLeft + timeline.clientWidth >= timeline.scrollWidth) {
+      alert('You have reached the end of the events list!');
+  }
+});
 
 
 
