@@ -2908,7 +2908,7 @@ body {
 }
 
 .info-content a {
-  color: white; /* Orange color for links */
+  color: orange; /* Orange color for links */
   text-decoration: none;
 }
 
@@ -2921,7 +2921,7 @@ body {
 }
 
 .social-heading {
-  color: white; /* Orange color for social heading */
+  color: orange; /* Orange color for social heading */
   margin-bottom: 10px;
 }
 
@@ -2952,23 +2952,6 @@ body {
 }
 
 /* Contact Form Section */
-/* Specific CSS for textarea */
-#contact-message {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #444;
-  border-radius: 4px;
-  color: black; /* Black text inside textarea */
-  margin-bottom: 15px;
-  resize: vertical; /* Allow vertical resizing */
-}
-
-/* Focus state for textarea */
-#contact-message:focus {
-  border-color: orange; /* Highlight border on focus */
-  outline: none;
-}
-
 .form-section {
   padding: 40px 0;
   background-color: #2c003e; /* Dark background */
@@ -3821,7 +3804,8 @@ body {
   100% {
     transform: translateX(100%) skewX(-20deg);
   }
-}/* Section Styling */
+}
+/* Section Styling */
 .section.empowerment-steps {
   padding: 60px 0;
   background-color: #2c003e; /* Dark Purple background */
@@ -3844,20 +3828,23 @@ body {
   position: relative;
   margin-top: 40px;
   display: flex;
+  flex-wrap: wrap; /* Allow items to wrap */
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start; /* Align items to the start to prevent wrapping */
 }
 
 /* Individual Timeline Items */
 .timeline-item {
   position: relative;
   text-align: center;
-  width: 23%; /* Adjust this width based on the number of items */
+  width: calc(25% - 20px); /* Adjust width to account for margin */
+  margin-bottom: 30px; /* Space between items */
+  margin-right: 20px; /* Add space to the right */
 }
 
 .timeline-content {
   background-color: #4b0082; /* Another shade of purple */
-  padding: 0px;
+  padding: 20px; /* Added padding for better spacing */
   border-radius: 10px;
   position: relative;
   z-index: 1;
@@ -3897,7 +3884,7 @@ body {
   position: absolute;
   top: 50%;
   left: 100%;
-  width: 100%; /* Full width, starting from the item */
+  width: calc(100% - 20px); /* Full width, starting from the item */
   height: 4px;
   background-color: #f89d35; /* Orange line */
   z-index: -1;
@@ -3907,6 +3894,41 @@ body {
   content: none; /* Remove the line after the last item */
 }
 
+/* Responsive Styling */
+@media (max-width: 768px) { /* Adjust the max-width value based on your needs */
+  .timeline {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: center; /* Center items */
+  }
+
+  .timeline-item {
+    width: 100%; /* Full width for each item on smaller screens */
+    margin-bottom: 20px; /* Space between items */
+    margin-right: 0; /* Remove right margin on smaller screens */
+  }
+
+  .timeline-item::after {
+    width: 0; /* Remove the line between items on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title h2 {
+    font-size: 24px; /* Smaller title on very small screens */
+  }
+
+  .section-title p {
+    font-size: 14px; /* Smaller subtitle on very small screens */
+  }
+
+  .timeline-item h3 {
+    font-size: 16px; /* Smaller heading on very small screens */
+  }
+
+  .timeline-item p {
+    font-size: 12px; /* Smaller text on very small screens */
+  }
+}
 
 
 

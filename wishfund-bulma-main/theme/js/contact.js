@@ -1,24 +1,24 @@
 (function ($) {
   "use strict";
 
-  var form = $(".contact__form"),
-    message = $(".contact__msg"),
+  var form = $("#contact-form"),
+    message = $("#form-success-message"),
     form_data;
 
   // Success function
   function done_func(response) {
     message.fadeIn().removeClass("alert-danger").addClass("alert-success");
-    message.text(response);
+    message.find('.message-body').text(response);
     setTimeout(function () {
       message.fadeOut();
     }, 2000);
     form.find('input:not([type="submit"]), textarea').val("");
   }
 
-  // fail function
+  // Fail function
   function fail_func(data) {
-    message.fadeIn().removeClass("alert-success").addClass("alert-success");
-    message.text(data.responseText);
+    message.fadeIn().removeClass("alert-success").addClass("alert-danger");
+    message.find('.message-body').text(data.responseText);
     setTimeout(function () {
       message.fadeOut();
     }, 2000);
