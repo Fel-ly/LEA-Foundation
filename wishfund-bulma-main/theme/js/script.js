@@ -436,6 +436,33 @@ document.getElementById('events-timeline').addEventListener('scroll', function()
       alert('You have reached the end of the events list!');
   }
 });
+function sendEmail() {
+  // Get form data
+  var form = document.getElementById('contact-form');
+  var formData = new FormData(form);
+
+  // Create XMLHttpRequest object
+  var xhr = new XMLHttpRequest();
+
+  // Configure it: POST-request for the URL /submit-form
+  xhr.open('POST', '/submit-form', true);
+
+  // Setup callback for when request is completed
+  xhr.onload = function () {
+    if (xhr.status >= 200 && xhr.status < 300) {
+      // Show success message
+      document.getElementById('form-success-message').style.display = 'block';
+      // Optionally, clear the form
+      form.reset();
+    } else {
+      // Handle errors
+      alert('An error occurred while sending your message. Please try again.');
+    }
+  };
+
+  // Send the request with form data
+  xhr.send(formData);
+}
 
 
 
