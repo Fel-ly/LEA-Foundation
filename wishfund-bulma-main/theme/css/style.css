@@ -1941,148 +1941,116 @@ ul.list-styled {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
   border: 1px solid transparent;
 }
-/*volunteer*/
-/* Volunteer Section Styling */
+/* Section Styling */
 .volunteer-section {
-  padding: 60px 20px;
-  background: #2c003e; /* Dark background for contrast */
-  color: #f5f5f5; /* Light text color */
+  padding: 60px 0;
+  background-color: #2c003e; /* Dark background */
 }
 
-/* Container for content */
 .volunteer-content {
-  padding: 20px;
-  background-color: black;
-  border-radius: 10px;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
-  gap: 20px;
-}
-
-/* Volunteer Info Styling */
-
-
-.icon-container {
-  margin: 20px 0;
-}
-
-.icon-container i {
-  font-size: 3rem; /* Adjust icon size */
-  color: #F89D35; /* Accent color for the icon */
-  display: inline-block;
-}
-
-.text-white {
-  color: #f5f5f5; /* White color for text */
-}
-
-.animate-slide {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: slide-up 1s forwards;
-}
-
-@keyframes slide-up {
-  to {
-      opacity: 1;
-      transform: translateY(0);
-  }
+  flex-wrap: wrap;
 }
 
 .volunteer-info {
   flex: 1;
-  max-width: 48%;
+  max-width: 600px;
+  color: white;
 }
 
 .section-intro {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #F89D35; /* Accent color */
+  font-size: 28px;
   margin-bottom: 20px;
+  color: #f89d35; /* Accent color */
 }
 
 .section-description {
-  font-size: 0.9rem;
-  line-height: 1.6;
+  font-size: 16px;
   margin-bottom: 30px;
 }
 
 .volunteer-benefits {
-  background: #000; /* Darker background for contrast */
-  padding: 20px;
-  border-radius: 10px;
+  margin-top: 30px;
 }
 
 .benefits-title {
-  font-size: 1.2rem;
-  color: #F89D35; /* Accent color */
-  margin-bottom: 10px;
+  font-size: 20px;
+  color: #f89d35; /* Accent color */
+  margin-bottom: 15px;
 }
 
 .benefits-list {
-  font-size: 0.8rem;
-  color: #f5f5f5; /* Light text color */
+  list-style-type: disc;
+  padding-left: 20px;
 }
 
 .benefits-list li {
   margin-bottom: 10px;
+}
 
-}
-.benefits-list li strong {
-  color: #f5f5f5; /* White color for strong elements */
-}
-/* Volunteer Form Styling */
 .volunteer-form-container {
   flex: 1;
-  max-width: 48%;
+  max-width: 600px;
+  background-color: #4b0082; /* Dark background for the form */
+  color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .form-title {
-  font-size: 1.2rem;
-  color: #F89D35; /* Accent color */
   display: block;
-  margin-bottom: 20px;
+  font-size: 18px;
+  color: #f89d35; /* Accent color */
+  margin-bottom: 10px;
 }
 
 .form-subtitle {
-  font-size: 1.5rem;
-  margin-bottom: 30px;
+  font-size: 24px;
   color: white;
+  margin-bottom: 20px;
 }
 
-.volunteer-form .form-group {
-  margin-bottom: 20px;
+.form-group {
+  margin-bottom: 15px;
 }
 
 .input {
   width: 100%;
   padding: 12px;
-  border-radius: 5px;
-  border: 1px solid #f5f5f5; /* Light border color */
-  background: #333; /* Dark background for input fields */
-  color: #f5f5f5; /* Light text color */
-  font-size: 0.8rem;
+  border: 1px solid #f89d35; /* Accent color */
+  border-radius: 4px;
+  background-color: #2c003e; /* Dark background for input fields */
+  color: white;
 }
 
-.input::placeholder {
-  color: #aaa; /* Light gray placeholder text */
+.input:focus {
+  border-color: #ff6600; /* Highlight border on focus */
+  outline: none;
 }
 
 .btn-main-2 {
-  background: #F89D35; /* Accent color */
-  color: #fff; /* White text color */
-  padding: 12px 24px;
-  border-radius: 5px;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  transition: background 0.3s ease;
-  border: none; /* Remove default border */
-  cursor: pointer; /* Pointer cursor for button */
+  background-color: #f89d35; /* Accent color */
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  transition: background-color 0.3s ease;
 }
 
 .btn-main-2:hover {
-  background: #e07a33; /* Slightly darker shade on hover */
+  background-color: #ff6600; /* Slightly darker orange on hover */
+}
+
+.benefits-list strong {
+  color: white;
+  text-transform: capitalize;
+  font-weight: bolder;
+  font-size: large;
 }
 
 /* Responsive Design Adjustments */
