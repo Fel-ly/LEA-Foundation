@@ -115,7 +115,7 @@
               </li>
 
               <li class="navbar-item">
-                <a class="navbar-link" href="projects.html">Projets</a>
+                <a class="navbar-link" href="projects.html">Projects</a>
               </li>
 
               <li class="navbar-item has-dropdown is-hoverable">
@@ -171,11 +171,11 @@
             </li>
             <li>
               <h6 class="info-title">Email Us</h6>
-              <p class="info-content"><a href="mailto:leaorganizationke@gmail.com">leaorganizationke@gmail.com</a></p>
+              <p class="info-content "><a href="mailto:leaorganizationke@gmail.com">leaorganizationke@gmail.com</a></p>
             </li>
             <li>
               <h6 class="info-title">Phone Number</h6>
-              <p class="info-content"><a href="tel:+254713518279">+254 713 518279</a></p>
+              <p class="info-content "><a href="tel:+254713518279">+254 713 518279</a></p>
             </li>
           </ul>
           <div class="social-media-links">
@@ -203,7 +203,8 @@
 <div class="form-section">
   <div class="container">
     <h3 class="form-heading">Send Us a Message</h3>
-    <form id="contact-form" class="contact-form" action="mail.php" method="post">
+    <form action="https://formspree.io/f/mpwanzyl" method="POST">
+    
       <!-- Form Success Message -->
       <div id="form-success-message" class="form-success-message" style="display: none;">
         <div class="message-body">
@@ -402,6 +403,23 @@
       }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
-
+    <script type="text/javascript">
+      document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
+        sendEmail(); // Call sendEmail function
+      });
+    
+      function sendEmail() {
+        emailjs.sendForm('service_m7k7bs9', 'template_crom7xc', '#contact-form')
+          .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            document.getElementById('form-success-message').style.display = 'block'; // Show success message
+            document.getElementById('contact-form').reset(); // Reset form fields
+          }, function(error) {
+            console.log('FAILED...', error);
+          });
+      }
+    </script>
+    
   </body>
 </html>
