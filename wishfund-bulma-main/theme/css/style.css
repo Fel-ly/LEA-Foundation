@@ -3012,17 +3012,26 @@ body {
 
 .form-heading {
   font-size: 24px;
-  color: white;
+  color: orange;
   margin-bottom: 20px;
   text-align: center;
 }
 
 .contact-form {
-  background-color: #4b0082; /* Slightly lighter dark background for form */
-  color: white;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #4b0082; /* Dark background for the form */
+  color: #fff; /* White text color */
+  padding: 30px; /* Padding inside the form */
+  border-radius: 12px; /* Slightly more rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow for depth */
+  max-width: 800px; /* Limit the width to prevent it from covering the whole screen */
+  margin: 0 auto; /* Center the form horizontally */
+  position: relative; /* Ensure the form is positioned correctly within its container */
+}
+/* Form Header Styling */
+.contact-form h2 {
+  font-size: 24px; /* Font size for the header */
+  margin-bottom: 20px; /* Space below the header */
+  color: #f89d35; /* Accent color for header */
 }
 
 .form-label {
