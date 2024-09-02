@@ -2898,9 +2898,10 @@ body {
 }
 
 .contact-heading {
-  font-size: 24px;
-  color: white;
+  font-size: 30px;
+  color: orange;
   margin-bottom: 10px;
+  
 }
 
 .contact-subheading {
