@@ -1584,50 +1584,6 @@ ul.list-styled {
   z-index: 1;
 }
 
-/* Slider background overlay */
-.slider::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(44, 0, 62, 0.4); /* Darkened overlay for better text visibility */
-  z-index: 1;
-  pointer-events: none;
-  transition: opacity 0.5s ease-in-out;
-}
-
-/* Background image container */
-.background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  z-index: 0;
-  animation: backgroundChange 15s infinite ease-in-out;
-  filter: brightness(50%); /* Adjust brightness to darken images */
-}
-
-/* Keyframes for background image transition */
-@keyframes backgroundChange {
-  0% {
-    background-image: url("../images/bg/LEANEW.jpg");
-  }
-  33% {
-    background-image: url("../images/bg/LEA-15.jpg");
-  }
-  66% {
-    background-image: url("../images/bg/LEA-17.jpg");
-  }
-  100% {
-    background-image: url("../images/bg/LEA-20.jpg");
-  }
-}
-
 /* Combined title and subtitle container with a blurred background */
 .title-container {
   font-family: 'Montserrat', sans-serif;
@@ -1643,7 +1599,14 @@ ul.list-styled {
   z-index: 2;
 }
 
+html, body {
+  overflow-x: hidden;
+}
 
+/* Ensure navbar doesn't overflow */
+.navbar {
+  overflow: hidden;
+}
 /* Main title styling */
 .main-title {
   font-size: 4rem;
