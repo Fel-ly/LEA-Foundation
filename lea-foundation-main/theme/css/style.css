@@ -420,7 +420,7 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
   margin: 0 0 0.5rem;
  
 }
-.project-title a {
+.project-title {
   color: #f89d35;
   text-decoration: none; /* Removes underline from the link */
 }
